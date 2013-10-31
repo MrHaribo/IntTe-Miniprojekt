@@ -1,5 +1,5 @@
 
-public class _Linklist {
+public class Linklist {
 	private String entries[] = { "hallo", "dies", "ist", "ein", "test" };
 
 	public String[] getEntries() {
