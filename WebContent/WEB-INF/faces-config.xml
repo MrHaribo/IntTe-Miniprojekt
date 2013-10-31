@@ -5,13 +5,13 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
 	<managed-bean>
-		<managed-bean-name>linkbean</managed-bean-name>
-		<managed-bean-class>linkbean</managed-bean-class>
+		<managed-bean-name>link</managed-bean-name>
+		<managed-bean-class>Link</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>linklist</managed-bean-name>
-		<managed-bean-class>linklist</managed-bean-class>
+		<managed-bean-class>Linklist</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
 
