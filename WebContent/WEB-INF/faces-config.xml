@@ -6,12 +6,12 @@
     version="2.2">
 	<managed-bean>
 		<managed-bean-name>link</managed-bean-name>
-		<managed-bean-class>Link</managed-bean-class>
+		<managed-bean-class>rClone.hsr.ch.Link</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>linklist</managed-bean-name>
-		<managed-bean-class>Linklist</managed-bean-class>
+		<managed-bean-class>rClone.hsr.ch.Linklist</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
 
