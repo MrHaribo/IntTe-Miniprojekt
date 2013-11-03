@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="header" style="background-color: Gray;">
+		<h:panelGrid border="0" columns="2">
+			<h1 style="color: White;">Reddit Clone</h1>
+			<h:form style="text-align: right;">
+				<h:inputText id="username" value="Username"></h:inputText>
+				<h:inputSecret id="password" value="Password"></h:inputSecret>	
+				<h:commandButton id="login" value="Login"></h:commandButton>
+				<h:commandButton id="register" value="Register" style="color: #FFFFFF; background-color: FireBrick"></h:commandButton>
+			</h:form>
+		</h:panelGrid>
+	</div>
+	<div id="reg" style="background-color: LightGrey">
+		<h:panelGrid border="0" columns="3">
+			<h:graphicImage id="regSymbol" value="images/reddit.png"></h:graphicImage>
+			<h:panelGrid border="0" columns="1">
+				<h2>Create a new User-Account</h2>
+				<p>You only need an username and a password.</p>
+			</h:panelGrid>
+			<h:form>
+				<h:panelGrid border="0" columns="1">
+				<h:inputText id="regUsername" value="Username"></h:inputText>
+				<h:inputText id="regPassword" value="Password"></h:inputText>
+				<h:inputText id="regRepPassword" value="Repeat Password"></h:inputText>
+					<h:commandButton id="regSubmit" value="Register" style="color: White; background-color: CornflowerBlue"></h:commandButton>
+				</h:panelGrid>
+			</h:form>
+		</h:panelGrid>
+	</div>
+	
+
+</body>
+</html>
