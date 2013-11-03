@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Insert title here</title>
+	</head>
+
+	<body>
+		<h:panelGrid border="0" columns="3">
+			<h:graphicImage id="regSymbol" value="images/reddit.png"></h:graphicImage>
+			<h:panelGrid border="0" columns="1">
+				<h2>Submit a new Link</h2>
+				<p>Enter a title and the URL to submit.</p>
+			</h:panelGrid>
+			<h:form>
+				<h:panelGrid border="0" columns="1">
+					<h:inputText id="title" value="Title"></h:inputText>
+					<h:inputText id="url" value="URL"></h:inputText>
+					<h:commandButton id="linkSubmit" value="Submit"></h:commandButton>
+				</h:panelGrid>
+			</h:form>
+		</h:panelGrid>
+	
+	</body>
+</html>
