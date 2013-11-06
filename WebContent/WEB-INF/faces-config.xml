@@ -43,6 +43,11 @@
 		<managed-bean-name>commentsubmit</managed-bean-name>
 		<managed-bean-class>rClone.hsr.ch.Commentsubmit</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>comments</property-name>
+			<property-class>java.util.List</property-class>
+			<value>#{commentlist.comments}</value>
+		</managed-property>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>commentlist</managed-bean-name>
