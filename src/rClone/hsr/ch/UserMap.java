@@ -20,8 +20,20 @@ public class UserMap {
 
 	}
 	
-	public boolean checkUser(String username) {
-		return users.containsKey(username);
+	public User checkUser(String username) {
+		if (users.containsKey(username)){
+			return users.get(username);
+		} else return null;
+	}
+	
+	public String login(String username, String password) {
+			User u = checkUser(username);
+			
+			if(u!=null) {
+				if (u.getPassword().equals(password)) return "loggedIn.xhtml";
+			}
+			
+		return "loggedOut.xhtml";
 	}
 	
 }

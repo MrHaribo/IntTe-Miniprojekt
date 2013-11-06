@@ -4,13 +4,26 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class User {
-	private String username;
-	private String password;
+	private String username = "Username";
+	private String password = "Password";
+	private boolean loggedIn = true;
 	
 	
+	public boolean isLoggedIn() {
+		return loggedIn;
+	}
+
+	public void setLoggedIn(boolean loggedIn) {
+		this.loggedIn = loggedIn;
+	}
+
 	public User(String username, String password) {
 		setUsername(username);
 		setPassword(password);
+	}
+	
+	public User(){
+		
 	}
 	
 	public String getUsername() {
