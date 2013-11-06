@@ -14,16 +14,20 @@
 
 	<p:forEach var="link" items="#{linklist.links}">
 	
-		<h:panelGrid border="1" columns="2">
-		
-			<h:button id="voteup" value="up"></h:button>
-			<h:outputText id="title" value="#{link.title}"></h:outputText>
-			<h:outputText value="#{link.votes}"></h:outputText>
-			<h:outputText id="info" value="Created: #{link.creationDate}"></h:outputText>
-			<h:button id="votedown" value="down"></h:button>
-			<h:outputText id="comments" value="Comments: #{link.numComments.toString}"></h:outputText>
+		<h:form>
+	
+			<h:panelGrid border="1" columns="2">
 			
-		</h:panelGrid>
+				<h:button id="voteup" value="up"></h:button>
+				<h:outputText id="title" value="#{link.title}"></h:outputText>
+				<h:outputText value="#{link.votes}"></h:outputText>
+				<h:outputText id="info" value="Created: #{link.creationDate}"></h:outputText>
+				<h:button id="votedown" value="down"></h:button>
+				
+				<h:commandLink id="comments" value="Comments: #{link.numComments}" action="comment_add"></h:commandLink>
+				
+			</h:panelGrid>
+		</h:form>
 		
 		<br/>
 		

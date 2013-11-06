@@ -1,5 +1,6 @@
 package rClone.hsr.ch;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class Link implements Comparable<Link> {
 	private String url;
 	int votes;
 	Date creationDate;
-	List<Comment> comments;
+	List<Comment> comments = new ArrayList<Comment>();
 	
 	public String getTitle() {
 		return title;
@@ -42,7 +43,7 @@ public class Link implements Comparable<Link> {
 		this.comments = comments;
 	}
 	
-	public int numComments() {
+	public int getNumComments() {
 		return comments.size();
 	}
 	

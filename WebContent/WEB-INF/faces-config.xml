@@ -83,16 +83,8 @@
 		<display-name>linksubmit.xhtml</display-name>
 		<from-view-id>/linksubmit.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>linksubmit</from-outcome>
+			<from-outcome>link_submit</from-outcome>
 			<to-view-id>/linklist.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<display-name>linksubmit.xhtml</display-name>
-		<from-view-id>/linksubmit.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>linkcancel</from-outcome>
-			<to-view-id>/register.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
@@ -101,6 +93,21 @@
 		<navigation-case>
 			<from-outcome>loggedIn</from-outcome>
 			<to-view-id>/template.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>linklist.xhtml</display-name>
+		<from-view-id>/linklist.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>comment_add</from-outcome>
+			<to-view-id>/commentsubmit.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>commentsubmit.xhtml</display-name>
+		<from-view-id>/commentsubmit.xhtml</from-view-id>
+		<navigation-case>
+			<to-view-id>/commentlist.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 

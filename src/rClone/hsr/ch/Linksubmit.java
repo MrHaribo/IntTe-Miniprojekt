@@ -29,7 +29,7 @@ public class Linksubmit {
 		newLink.setUrl(url);
 		links.add(newLink);
 
-		return "linksubmit";
+		return "link_submit";
 	}
 	
 	private List<Link> links;
