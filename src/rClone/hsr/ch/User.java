@@ -6,7 +6,7 @@ import javax.faces.bean.ManagedBean;
 public class User {
 	private String username = "Username";
 	private String password = "Password";
-	private boolean loggedIn = true;
+	private boolean loggedIn = false;
 	
 	
 	public boolean isLoggedIn() {

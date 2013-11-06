@@ -49,6 +49,31 @@
 		<managed-bean-class>rClone.hsr.ch.Commentlist</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>userLogin</managed-bean-name>
+		<managed-bean-class>rClone.hsr.ch.UserLogin</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>users</property-name>
+			<property-class>java.util.HashMap</property-class>
+			<value>#{userMap.users}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>username</property-name>
+			<property-class>java.lang.String</property-class>
+			<value>#{user.username}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>password</property-name>
+			<property-class>java.lang.String</property-class>
+			<value>#{user.password}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>loggedIn</property-name>
+			<property-class>boolean</property-class>
+			<value>#{user.loggedIn}</value>
+		</managed-property>
+	</managed-bean>
 	<navigation-rule>
 		<display-name>linksubmit.xhtml</display-name>
 		<from-view-id>/linksubmit.xhtml</from-view-id>
@@ -63,6 +88,14 @@
 		<navigation-case>
 			<from-outcome>linkcancel</from-outcome>
 			<to-view-id>/register.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>loggedOut.xhtml</display-name>
+		<from-view-id>/loggedOut.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>loggedIn</from-outcome>
+			<to-view-id>/template.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 

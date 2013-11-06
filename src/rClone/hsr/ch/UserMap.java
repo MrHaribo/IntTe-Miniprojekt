@@ -9,6 +9,11 @@ public class UserMap {
 
 	public HashMap<String, User> users;
 
+	public HashMap<String, User> getUsers() {
+		return users;
+	}
+
+
 	public UserMap() {
 		users = new HashMap<String, User>();
 		
@@ -20,20 +25,9 @@ public class UserMap {
 
 	}
 	
-	public User checkUser(String username) {
-		if (users.containsKey(username)){
-			return users.get(username);
-		} else return null;
+	public void setUsers(HashMap<String, User> users) {
+		this.users = users;
 	}
 	
-	public String login(String username, String password) {
-			User u = checkUser(username);
-			
-			if(u!=null) {
-				if (u.getPassword().equals(password)) return "loggedIn.xhtml";
-			}
-			
-		return "loggedOut.xhtml";
-	}
 	
 }

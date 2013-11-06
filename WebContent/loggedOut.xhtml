@@ -10,9 +10,9 @@
 	<h:panelGrid border="1" columns="3">
 			<h:outputText value="Reddit Clone"/>
 		<h:form>
-			<h:inputText id="username" value="#{user.username}"/>
-			<h:inputSecret id="password" value="#{user.password}"/>
-			<h:commandButton id="login" value="Login"/>
+			<h:inputText id="username" value="#{userLogin.username}"/>
+			<h:inputSecret id="password" value="#{userLogin.password}"/>
+			<h:commandButton id="login" value="Login" action="#{userLogin.login}"/>
 		</h:form>
 		<h:form>
 		<h:commandButton id="register" value="Register"/>
