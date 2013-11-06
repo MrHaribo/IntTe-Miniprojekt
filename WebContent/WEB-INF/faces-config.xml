@@ -14,5 +14,15 @@
 		<managed-bean-class>rClone.hsr.ch.Linklist</managed-bean-class>
 		<managed-bean-scope>application</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>user</managed-bean-name>
+		<managed-bean-class>rClone.hsr.ch.User</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>userMap</managed-bean-name>
+		<managed-bean-class>rClone.hsr.ch.UserMap</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>
