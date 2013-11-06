@@ -3,8 +3,6 @@ package rClone.hsr.ch;
 import java.util.Date;
 import java.util.List;
 
-import javax.faces.bean.ManagedProperty;
-
 public class Linksubmit {
 
 	private String title;
@@ -23,17 +21,12 @@ public class Linksubmit {
 		this.url = url;
 	}
 	public String addLink(){
-		/*
-		
-		newLink.setCrationDate(new Date());
-		newLink.setRating(0);
+
+		Link newLink = new Link();
+		newLink.setCreationDate(new Date());
+		newLink.setVotes(0);
 		newLink.setTitle(title);
 		newLink.setUrl(url);
-		
-		
-		*/
-		
-		Link newLink = new Link();
 		links.add(newLink);
 
 		return "linksubmit";
