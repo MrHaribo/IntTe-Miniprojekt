@@ -8,18 +8,6 @@
 <title>Reddit-Clone</title>
 </head>
 <body>
-	<div id="header">
-		<h:panelGrid border="0" columns="2">
-			<h1>Reddit Clone</h1>
-			<h:form>
-				<h:inputText id="username" value="Username"></h:inputText>
-				<h:inputSecret id="password" value="Password"></h:inputSecret>	
-				<h:commandButton id="login" value="Login"></h:commandButton>
-				<h:commandButton id="register" value="Register"></h:commandButton>
-			</h:form>
-		</h:panelGrid>
-	</div>
-	<div id="reg">
 		<h:panelGrid border="0" columns="3">
 			<h:graphicImage id="regSymbol" library="images" name="reddit.png"></h:graphicImage>
 			<h:panelGrid border="0" columns="1">
@@ -28,14 +16,13 @@
 			</h:panelGrid>
 			<h:form>
 				<h:panelGrid border="0" columns="1">
-				<h:inputText id="regUsername" value="Username"></h:inputText>
-				<h:inputText id="regPassword" value="Password"></h:inputText>
-				<h:inputText id="regRepPassword" value="Repeat Password"></h:inputText>
-					<h:commandButton id="regSubmit" value="Register"></h:commandButton>
+				<h:inputText id="regUsername" value="Username"/>
+				<h:inputText id="regPassword" value="Password"/>
+				<h:inputText id="regRepPassword" value="Repeat Password"/>
+					<h:commandButton id="regSubmit" value="Register"/>
 				</h:panelGrid>
 			</h:form>
 		</h:panelGrid>
-	</div>
 	
 
 </body>
