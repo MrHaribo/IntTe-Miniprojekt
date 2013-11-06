@@ -28,6 +28,11 @@
 		<managed-bean-name>linksubmit</managed-bean-name>
 		<managed-bean-class>rClone.hsr.ch.Linksubmit</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>links</property-name>
+			<property-class>java.util.List</property-class>
+			<value>#{linklist.links}</value>
+		</managed-property>
 	</managed-bean>
 	<navigation-rule>
 		<display-name>linksubmit.xhtml</display-name>
@@ -41,6 +46,7 @@
 		<display-name>linksubmit.xhtml</display-name>
 		<from-view-id>/linksubmit.xhtml</from-view-id>
 		<navigation-case>
+			<from-outcome>linkcancel</from-outcome>
 			<to-view-id>/register.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>

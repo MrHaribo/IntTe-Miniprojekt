@@ -24,18 +24,27 @@ public class Linksubmit {
 	}
 	public String addLink(){
 		/*
-		Link newLink = new Link();
+		
 		newLink.setCrationDate(new Date());
 		newLink.setRating(0);
 		newLink.setTitle(title);
 		newLink.setUrl(url);
 		
-		links.add(newLink);
+		
 		*/
+		
+		Link newLink = new Link();
+		links.add(newLink);
+
 		return "linksubmit";
 	}
 	
-	@ManagedProperty(value = "#{linklist.links}")
-	List<Link> links;
-	
+	private List<Link> links;
+
+	public List<Link> getLinks() {
+		return links;
+	}
+	public void setLinks(List<Link> links) {
+		this.links = links;
+	}
 }
