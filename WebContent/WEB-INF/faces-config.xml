@@ -34,6 +34,21 @@
 			<value>#{linklist.links}</value>
 		</managed-property>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>comment</managed-bean-name>
+		<managed-bean-class>rClone.hsr.ch.Comment</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>commentsubmit</managed-bean-name>
+		<managed-bean-class>rClone.hsr.ch.Commentsubmit</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>commentlist</managed-bean-name>
+		<managed-bean-class>rClone.hsr.ch.Commentlist</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
 	<navigation-rule>
 		<display-name>linksubmit.xhtml</display-name>
 		<from-view-id>/linksubmit.xhtml</from-view-id>
