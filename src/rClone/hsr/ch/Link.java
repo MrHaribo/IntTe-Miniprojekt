@@ -51,4 +51,17 @@ public class Link implements Comparable<Link> {
 	public int compareTo(Link arg0) {
 		return arg0.getVotes() - votes;
 	}
+	
+	public String voteUp() {
+		System.out.println("link voted up");
+		this.votes++;
+		return "link voted up";
+	}
+	
+	public String voteDown() {
+		System.out.println("link voted down");
+		if (this.votes > 0)
+			this.votes--;
+		return "link voted down";
+	}
 }

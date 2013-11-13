@@ -15,7 +15,7 @@ public class Linklist {
 		
 		Link l1 = new Link();
 		l1.setTitle("link1");
-		l1.setVotes(10);
+		l1.setVotes(105);
 		l1.setCreationDate(new Date());
 		
 		Link l2 = new Link();

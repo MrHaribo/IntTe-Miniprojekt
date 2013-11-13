@@ -18,11 +18,11 @@
 	
 			<h:panelGrid border="1" columns="2">
 			
-				<h:button id="voteup" value="up"></h:button>
+				<h:commandButton id="voteup" value="up" action="#{link.voteUp}"></h:commandButton>
 				<h:outputText id="title" value="#{link.title}"></h:outputText>
 				<h:outputText value="#{link.votes}"></h:outputText>
 				<h:outputText id="info" value="Created: #{link.creationDate}"></h:outputText>
-				<h:button id="votedown" value="down"></h:button>
+				<h:commandButton id="votedown" value="down" action="#{link.voteDown}"></h:commandButton>
 				
 				<h:commandLink id="comments" value="Comments: #{link.numComments}" action="comment_add"></h:commandLink>
 				
