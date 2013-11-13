@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean
 public class UserMap {
 
-	public HashMap<String, User> users;
+	private HashMap<String, User> users;
 
 	public HashMap<String, User> getUsers() {
 		return users;
