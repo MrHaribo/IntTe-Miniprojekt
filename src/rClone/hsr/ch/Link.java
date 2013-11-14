@@ -13,8 +13,7 @@ public class Link {
 			return arg1.getVotes() - arg0.getVotes();
 		}  
 	}
-	
-	//temporary not used... would be nicer solution, but hard to understand in java
+
 	public static class LinkIdComparator implements Comparator<Link> {  
 		@Override
 		public int compare(Link arg0, Link arg1) {
@@ -22,12 +21,44 @@ public class Link {
 		}  
 	}  
 
+	private Linklist linklist;
 	private int id;
 	private String title;
 	private String url;
 	int votes;
 	Date creationDate;
 	List<Comment> comments = new ArrayList<Comment>();
+	
+	public String createLink() {
+
+		Link newLink = new Link();
+		newLink.setVotes(0);
+		newLink.setTitle(title);
+		newLink.setUrl(url);
+		linklist.addLink(newLink);
+
+		return "linklist.xhtml";
+	}
+	
+	public String voteUp() {
+		System.out.println("link voted up");
+		this.votes++;
+		return "link voted up";
+	}
+	
+	public String voteDown() {
+		System.out.println("link voted down");
+		if (this.votes > 0)
+			this.votes--;
+		return "link voted down";
+	}
+	
+	public Linklist getLinklist() {
+		return linklist;
+	}
+	public void setLinklist(Linklist linklist) {
+		this.linklist = linklist;
+	}
 	
 	public int getId() {
 		return id;
@@ -68,18 +99,5 @@ public class Link {
 	
 	public int getNumComments() {
 		return comments.size();
-	}
-	
-	public String voteUp() {
-		System.out.println("link voted up");
-		this.votes++;
-		return "link voted up";
-	}
-	
-	public String voteDown() {
-		System.out.println("link voted down");
-		if (this.votes > 0)
-			this.votes--;
-		return "link voted down";
 	}
 }
