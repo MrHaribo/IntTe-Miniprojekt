@@ -1,56 +1,19 @@
 package rClone.hsr.ch;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 
-public class Link {
+public class Link extends VoteEntry {
 	
-	public static class LinkVoteComparator implements Comparator<Link> {  
-		@Override
-		public int compare(Link arg0, Link arg1) {
-			return arg1.getVotes() - arg0.getVotes();
-		}  
-	}
-
-	public static class LinkIdComparator implements Comparator<Link> {  
-		@Override
-		public int compare(Link arg0, Link arg1) {
-			return arg0.getId() - arg1.getId();
-		}  
-	}  
-
 	private Linklist linklist;
-	private int id;
+	
 	private String title;
 	private String url;
-	int votes;
-	Date creationDate;
 	List<Comment> comments = new ArrayList<Comment>();
 	
 	public String createLink() {
-
-		Link newLink = new Link();
-		newLink.setVotes(0);
-		newLink.setTitle(title);
-		newLink.setUrl(url);
-		linklist.addLink(newLink);
-
+		linklist.addEntry(this);
 		return "linklist.xhtml";
-	}
-	
-	public String voteUp() {
-		System.out.println("link voted up");
-		this.votes++;
-		return "link voted up";
-	}
-	
-	public String voteDown() {
-		System.out.println("link voted down");
-		if (this.votes > 0)
-			this.votes--;
-		return "link voted down";
 	}
 	
 	public Linklist getLinklist() {
@@ -58,13 +21,6 @@ public class Link {
 	}
 	public void setLinklist(Linklist linklist) {
 		this.linklist = linklist;
-	}
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public String getTitle() {
 		return title;
@@ -77,18 +33,6 @@ public class Link {
 	}
 	public void setUrl(String url) {
 		this.url = url;
-	}
-	public int getVotes() {
-		return votes;
-	}
-	public void setVotes(int votes) {
-		this.votes = votes;
-	}
-	public Date getCreationDate() {
-		return creationDate;
-	}
-	public void setCreationDate(Date crationDate) {
-		this.creationDate = crationDate;
 	}
 	public List<Comment> getComments() {
 		return comments;
