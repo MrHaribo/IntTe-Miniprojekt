@@ -7,7 +7,7 @@
 	<managed-bean>
 		<managed-bean-name>link</managed-bean-name>
 		<managed-bean-class>rClone.hsr.ch.Link</managed-bean-class>
-		<managed-bean-scope>application</managed-bean-scope>
+		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>linklist</managed-bean-name>
@@ -34,9 +34,9 @@
 		<managed-bean-class>rClone.hsr.ch.Linksubmit</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 		<managed-property>
-			<property-name>links</property-name>
-			<property-class>java.util.List</property-class>
-			<value>#{linklist.links}</value>
+			<property-name>linklist</property-name>
+			<property-class>rClone.hsr.ch.Linklist</property-class>
+			<value>#{linklist}</value>
 		</managed-property>
 	</managed-bean>
 	<managed-bean>

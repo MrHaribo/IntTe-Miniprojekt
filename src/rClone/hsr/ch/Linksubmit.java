@@ -1,8 +1,5 @@
 package rClone.hsr.ch;
 
-import java.util.Date;
-import java.util.List;
-
 public class Linksubmit {
 
 	private String title;
@@ -23,21 +20,20 @@ public class Linksubmit {
 	public String addLink(){
 
 		Link newLink = new Link();
-		newLink.setCreationDate(new Date());
 		newLink.setVotes(0);
 		newLink.setTitle(title);
 		newLink.setUrl(url);
-		links.add(newLink);
+		linklist.addLink(newLink);
 
 		return "link_submit";
 	}
 	
-	private List<Link> links;
+	private Linklist linklist;
 
-	public List<Link> getLinks() {
-		return links;
+	public Linklist getLinklist() {
+		return linklist;
 	}
-	public void setLinks(List<Link> links) {
-		this.links = links;
+	public void setLinklist(Linklist linklist) {
+		this.linklist = linklist;
 	}
 }
