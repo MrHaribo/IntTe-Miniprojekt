@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h2>Login Page Header</h2>
+    <p>This is permanently here: (Debug Login Panel Group Start)</p>
+    
+    <h:panelGroup layout="block" id="login_panelGroup">
+    
+	    <h:panelGroup rendered="#{!user.loggedIn}">
+			<h:panelGrid border="1" columns="3">
+				<h:outputText value="Reddit Clone" />
+				<h:form>
+					<h:inputText id="username" value="#{user.username}" />
+					<h:inputSecret id="password" value="#{user.password}" />
+					<h:commandButton value="Login"
+						action="#{user.checkLogin}">
+						<f:ajax execute="@form" render=":login_panelGroup" />
+					</h:commandButton>
+				</h:form>
+				<h:form>
+					<h:commandButton value="Register" action="register.xhtml">
+					</h:commandButton>
+				</h:form>
+			</h:panelGrid>
+		</h:panelGroup>
+	
+		<h:panelGroup rendered="#{user.loggedIn}">
+			<h:panelGrid border="1" columns="3">
+				<h:outputText value="Reddit Clone" />
+				<h:form>
+					<h:commandButton id="addLink" value="Submit new Link" />
+				</h:form>
+				<h:form>
+					<h:outputText value="${user.username}" />
+					<h:commandButton value="Logout" action="#{user.logOut}">
+						<f:ajax execute="@form" render=":login_panelGroup" />
+					</h:commandButton>
+				</h:form>
+			</h:panelGrid>
+		</h:panelGroup>
+	
+	</h:panelGroup>
+</ui:composition>

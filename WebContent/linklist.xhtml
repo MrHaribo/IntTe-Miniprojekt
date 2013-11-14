@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://java.sun.com/jsp/jstl/core"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
@@ -9,32 +10,30 @@
 <title>Link List</title>
 </head>
 <body>
-	<h1>Link List</h1>
-
-	<br/>
-
-	<p:forEach var="link" items="#{linklist.links}">
-	
-		<h:form>
-	
-			<h:panelGrid border="1" columns="2">
-			
-				<h:commandButton id="voteup" value="up" action="#{link.voteUp}"></h:commandButton>
-				<h:outputText id="title" value="#{link.title}"></h:outputText>
-				<h:outputText value="#{link.votes}"></h:outputText>
-				<h:outputText id="info" value="Created: #{link.creationDate}"></h:outputText>
-				<h:commandButton id="votedown" value="down" action="#{link.voteDown}"></h:commandButton>
-				
-				<h:link outcome="comment_add" includeViewParams="true" value="Comments: #{link.numComments}">
-			   		<f:param name="linkid" value="#{link.id}"/>
-			    </h:link>
-				
-			</h:panelGrid>
-		</h:form>
+	<ui:composition template="./template.xhtml">
+		<ui:define name="content_website">
+			<h1>Link List</h1><br/>
 		
-		<br/>
-		
-	</p:forEach>
+			<p:forEach var="link" items="#{linklist.links}">
 
+				<h:form>
+					<h:panelGrid border="1" columns="2">
+						<h:commandButton id="voteup" value="up" action="#{link.voteUp}"></h:commandButton>
+						<h:outputText id="title" value="#{link.title}"></h:outputText>
+						<h:outputText value="#{link.votes}"></h:outputText>
+						<h:outputText id="info" value="Created: #{link.creationDate}"></h:outputText>
+						<h:commandButton id="votedown" value="down" action="#{link.voteDown}"></h:commandButton>
+						
+						<h:link outcome="comment_add" includeViewParams="true" value="Comments: #{link.numComments}">
+					   		<f:param name="linkid" value="#{link.id}"/>
+					    </h:link>
+						
+					</h:panelGrid>
+				</h:form>
+				<br/>
+				
+			</p:forEach>
+		</ui:define>
+	</ui:composition>
 </body>
 </html>
