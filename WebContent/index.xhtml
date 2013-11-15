@@ -5,48 +5,16 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
-<title>Reddit Clone</title>
+	<title>Insert Title here</title>
 </h:head>
 <body>
 	<ui:composition template="./template.xhtml">
 		<ui:define name="content_header">
-			<h:panelGroup rendered="#{!user.loggedIn}">
-				<h:panelGrid border="1" columns="3">
-					<h:outputText value="Reddit Clone" />
-					<h:form>
-						<h:inputText id="username" value="#{user.username}" />
-						<h:inputSecret id="password" value="#{user.password}" />
-						<h:commandButton value="Login"
-							action="#{user.checkLogin}">
-							<f:ajax execute="@form" render=":header" />
-						</h:commandButton>
-					</h:form>
-					<h:form>
-						<h:commandButton value="Register"
-							action="#{navigationBean.requestPage}">
-							<f:param name="requestedPage" value="register.xhtml" />
-						</h:commandButton>
-					</h:form>
-				</h:panelGrid>
-			</h:panelGroup>
-
-			<h:panelGroup rendered="#{user.loggedIn}">
-				<h:panelGrid border="1" columns="3">
-					<h:outputText value="Reddit Clone" />
-					<h:form>
-						<h:commandButton id="addLink" value="Submit new Link" />
-					</h:form>
-					<h:form>
-						<h:outputText value="${user.username}" />
-						<h:commandButton value="Logout" action="#{user.logOut}">
-							<f:ajax execute="@form" render=":header" />
-						</h:commandButton>
-					</h:form>
-				</h:panelGrid>
-			</h:panelGroup>
+			<ui:include src="login.xhtml" />
 		</ui:define>
-
 		<ui:define name="content_top">
+		</ui:define>
+		<ui:define name="content_main">
 			<ui:include src="#{navigationBean.viewedPage}" />
 		</ui:define>
 	</ui:composition>

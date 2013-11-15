@@ -24,13 +24,13 @@ public class VoteEntry {
 	Date creationDate;
 	
 	public String voteUp() {
-		System.out.println("link voted up");
+		//System.out.println("link voted up");
 		this.votes++;
 		return "link voted up";
 	}
 	
 	public String voteDown() {
-		System.out.println("link voted down");
+		//System.out.println("link voted down");
 		if (this.votes > 0)
 			this.votes--;
 		return "link voted down";

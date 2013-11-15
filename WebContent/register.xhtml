@@ -9,7 +9,10 @@
 </h:head>
 <body>
 	<ui:composition template="./template.xhtml">
-		<ui:define name="content_website">
+		<ui:define name="content_header">
+			<ui:include src="login.xhtml"/>
+		</ui:define>	
+		<ui:define name="content_top">
 			<h:panelGrid border="0" columns="3">
 				<h:graphicImage id="regSymbol" library="images" name="reddit.png"></h:graphicImage>
 				<h:panelGrid border="0" columns="1">
@@ -21,13 +24,17 @@
 						<h:inputText id="regUsername" value="#{user.username}" />
 						<h:inputText id="regPassword" value="#{user.password}" />
 						<h:inputText id="regRepPassword" value="Repeat Password" />
-						<h:commandButton id="regSubmit" value="Register"
-							action="#{user.register}">
+						<h:commandButton id="regSubmit" value="Register" action="#{user.register}">
 						</h:commandButton>
 					</h:panelGrid>
 				</h:form>
 			</h:panelGrid>
 		</ui:define>
+
+		<ui:define name="content_main">
+			<ui:include src="#{navigationBean.viewedPage}" />
+		</ui:define>
+
 	</ui:composition>
 </body>
 </html>

@@ -5,7 +5,7 @@ import java.util.Date;
 public class Comment {
 	
 	private String text;
-	int rating;
+	int rating = 0;
 	Date creationDate;
 	
 	public String getText() {

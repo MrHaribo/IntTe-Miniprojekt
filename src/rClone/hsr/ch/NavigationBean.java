@@ -10,7 +10,7 @@ public class NavigationBean
 
     public NavigationBean()
     {
-        
+        viewedPage = "linklist.xhtml";
     }
 
     public String getViewedPage()

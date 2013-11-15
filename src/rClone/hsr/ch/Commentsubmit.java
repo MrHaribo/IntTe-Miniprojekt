@@ -17,7 +17,6 @@ public class Commentsubmit {
 		
 		Comment newComment = new Comment();
 		newComment.setCreationDate(new Date());
-		newComment.setRating(0);
 		newComment.setText(text);
 		comments.add(newComment);
 

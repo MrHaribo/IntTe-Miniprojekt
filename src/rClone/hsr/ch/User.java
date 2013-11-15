@@ -51,24 +51,23 @@ public class User {
 		this.users = users;
 	}
 	
-	public String checkLogin() {
+	public void checkLogin() {
 		if (users.containsKey(username) && users.get(username).getPassword().equals(password))  
 			loggedIn = true;
 		else 
 			loggedIn = false;
 		
-		return "linklist.xhtml";
 	}
 	
-	public String logOut() {
+	public void logOut() {
 		username="Username";
 		password="Password";
 		loggedIn=false;
 		
-		return "linklist.xhtml";
 	}
 	
 	public String register() {
+		
 		User u = new User();
 		u.setPassword(password);
 		u.setUsername(username);
@@ -76,8 +75,9 @@ public class User {
 		users.put(username, u);
 		
 		checkLogin();
+		String result = "registered";
+		return result;
 		
-		return "linklist.xhtml";
 	}
 	
 	

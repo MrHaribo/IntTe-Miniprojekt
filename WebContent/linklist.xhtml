@@ -10,30 +10,39 @@
 <title>Link List</title>
 </head>
 <body>
-	<ui:composition template="./template.xhtml">
-		<ui:define name="content_website">
-			<h1>Link List</h1><br/>
-		
+	<ui:composition>
+
+		<h2>Link List</h2>
+		<br />
+
+		<h:panelGroup layout="block" id="linklist_panelGroup">
+
 			<p:forEach var="link" items="#{linklist.links}">
 
 				<h:form>
 					<h:panelGrid border="1" columns="2">
-						<h:commandButton id="voteup" value="up" action="#{link.voteUp}"></h:commandButton>
+						<h:commandButton id="voteup" value="up" action="#{link.voteUp}">
+							<f:ajax execute="@form" render=":linklist_panelGroup" />
+						</h:commandButton>
 						<h:outputText id="title" value="#{link.title}"></h:outputText>
 						<h:outputText value="#{link.votes}"></h:outputText>
-						<h:outputText id="info" value="Created: #{link.creationDate}"></h:outputText>
-						<h:commandButton id="votedown" value="down" action="#{link.voteDown}"></h:commandButton>
-						
-						<h:link outcome="comment_add" includeViewParams="true" value="Comments: #{link.numComments}">
-					   		<f:param name="linkid" value="#{link.id}"/>
-					    </h:link>
-						
+						<h:outputText id="info" value="Created: #{link.creationDate}" />
+						<h:commandButton id="votedown" value="down"
+							action="#{link.voteDown}">
+							<f:ajax execute="@form" render=":linklist_panelGroup" />
+						</h:commandButton>
+
+						<h:link outcome="comment_add" includeViewParams="true"
+							value="Comments: #{link.numComments}">
+							<f:param name="linkid" value="#{link.id}" />
+						</h:link>
+
 					</h:panelGrid>
 				</h:form>
-				<br/>
-				
+				<br />
+
 			</p:forEach>
-		</ui:define>
+		</h:panelGroup>
 	</ui:composition>
 </body>
 </html>
