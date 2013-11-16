@@ -1,25 +1,39 @@
 package rClone.hsr.ch;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
 
 public class VoteList<T extends VoteEntry> {
 	
-	private int entryCount = 100;
-	protected List<T> entries = new LinkedList<T>();
+	protected ArrayList<T> entries = new ArrayList<T>();
 	
-	public T getLinkFromId(int id) {
+	public T fromId(int id) {
+		
 		VoteEntry searchEntry = new VoteEntry();
 		searchEntry.setId(id);
 		int searchIdx = Collections.binarySearch(entries,  searchEntry, new VoteEntry.LinkIdComparator());
-		return searchIdx < -1 ? null : entries.get(searchIdx);
+		return entries.get(searchIdx);
+		
+		/*
+		for (T e : entries)
+			if (e.getId() == id)
+				return e;
+		return null;
+		*/
+	}
+	
+	public T fromIdx(int idx) {
+		return entries.get(idx);
 	}
 	
 	public void addEntry(T entry) {
-		entry.setId(++entryCount);
+		entry.setId(entries.size());
 		entry.setCreationDate(new Date());
 		this.entries.add(entry);
+	}
+	
+	public int getSize() {
+		return entries.size();
 	}
 }

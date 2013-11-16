@@ -23,6 +23,8 @@ public class VoteEntry {
 	private int votes;
 	Date creationDate;
 	
+	private VoteList<VoteEntry> children = new VoteList<VoteEntry>();
+	
 	public String voteUp() {
 		//System.out.println("link voted up");
 		this.votes++;
@@ -53,5 +55,11 @@ public class VoteEntry {
 	}
 	public void setCreationDate(Date crationDate) {
 		this.creationDate = crationDate;
+	}
+	public VoteList<VoteEntry> getChildren() {
+		return children;
+	}
+	public void setChildren(VoteList<VoteEntry> children) {
+		this.children = children;
 	}
 }

@@ -1,15 +1,11 @@
 package rClone.hsr.ch;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Link extends VoteEntry {
 	
 	private Linklist linklist;
 	
 	private String title;
 	private String url;
-	List<Comment> comments = new ArrayList<Comment>();
 	
 	public String createLink() {
 		linklist.addEntry(this);
@@ -33,15 +29,5 @@ public class Link extends VoteEntry {
 	}
 	public void setUrl(String url) {
 		this.url = url;
-	}
-	public List<Comment> getComments() {
-		return comments;
-	}
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
-	
-	public int getNumComments() {
-		return comments.size();
 	}
 }

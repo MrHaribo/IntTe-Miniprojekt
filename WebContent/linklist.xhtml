@@ -33,7 +33,7 @@
 						</h:commandButton>
 
 						<h:link outcome="comment_add" includeViewParams="true"
-							value="Comments: #{link.numComments}">
+							value="Comments: #{link.children.size}">
 							<f:param name="linkid" value="#{link.id}" />
 						</h:link>
 
