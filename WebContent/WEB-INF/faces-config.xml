@@ -4,6 +4,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
+    
+	<component>
+		<component-type>rClone.hsr.ch.VoteTree</component-type>
+		<component-class>rClone.hsr.ch.VoteTreeComponent</component-class>
+	</component>
+    
 	<managed-bean>
 		<managed-bean-name>link</managed-bean-name>
 		<managed-bean-class>rClone.hsr.ch.Link</managed-bean-class>

@@ -1,0 +1,17 @@
+<facelet-taglib version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+        http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd">
+        
+  <namespace>http://hsr.ch/rClone</namespace>
+
+  <tag>
+	  <tag-name>votetree</tag-name>
+	  <component>
+	    <component-type>rClone.hsr.ch.VoteTree</component-type>
+	    <renderer-type>rClone.hsr.ch.VoteTree</renderer-type>
+	  </component>
+  </tag>
+  
+</facelet-taglib>
