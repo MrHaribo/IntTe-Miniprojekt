@@ -23,9 +23,11 @@ public class NavigationBean
         this.viewedPage = viewedPage;
     }
 
-    public void requestPage()
+    public String requestPage()
     {
         Map<String,String> map = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         viewedPage = map.get("requestedPage");
+        
+        return "bla";
     }
 }

@@ -32,10 +32,10 @@
 							<f:ajax execute="@form" render=":linklist_panelGroup" />
 						</h:commandButton>
 
-						<h:link outcome="comment_add" includeViewParams="true"
+						<h:commandLink action="showComments" includeViewParams="true"
 							value="Comments: #{link.children.size}">
-							<f:param name="linkid" value="#{link.id}" />
-						</h:link>
+							<f:param name="linkId" value="#{link.id}" />
+						</h:commandLink>
 
 					</h:panelGrid>
 				</h:form>

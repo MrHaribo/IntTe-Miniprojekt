@@ -51,18 +51,22 @@ public class User {
 		this.users = users;
 	}
 	
-	public void checkLogin() {
+	public String checkLogin() {
 		if (users.containsKey(username) && users.get(username).getPassword().equals(password))  
 			loggedIn = true;
 		else 
 			loggedIn = false;
 		
+		return "loggedIn";
+		
 	}
 	
-	public void logOut() {
+	public String logOut() {
 		username="Username";
 		password="Password";
 		loggedIn=false;
+		
+		return "loggedOut";
 		
 	}
 	
@@ -75,9 +79,7 @@ public class User {
 		users.put(username, u);
 		
 		checkLogin();
-		String result = "registered";
-		return result;
-		
+		return "registered";
 	}
 	
 	

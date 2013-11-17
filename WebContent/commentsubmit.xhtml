@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html 	xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:f="http://java.sun.com/jsf/core"
-		xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:rc="http://hsr.ch/rClone">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:rc="http://hsr.ch/rClone"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Insert title here</title>
@@ -11,30 +11,47 @@
 <body>
 
 	<f:metadata>
-	  	<f:viewParam name="linkid" value="#{link.id}"/>
+		<f:viewParam name="linkId" value="#{link.id}" />
 	</f:metadata>
-	
-	<h:form>
-           
-		<p>A simple HelloWorld Custom Component:</p>
-	                        
-		<p>The HelloWorld UI Component:</p>
-		<rc:votetree hellomsg="Hello world! This is output from a custom JSF Component!"   />
-	</h:form>
+
+	<ui:composition template="./template.xhtml">
+		<ui:define name="content_header">
+			<ui:include src="login.xhtml" />
+		</ui:define>
+		<ui:define name="content_top" />
+		<ui:define name="content_main">
+			<h:panelGroup layout="block" id="comments_panelGroup">
+				<h:form>
 
 
-	<h:outputText id="test" value="#{link.id}"></h:outputText>
-	
-	<h:outputText id="test2" value="Test Entry: ${linklist.fromId(link.id).title}"></h:outputText>
+					<p>A simple HelloWorld Custom Component:</p>
 
-	<h:panelGrid border="0" columns="2">
-		<h:graphicImage id="regSymbol" library="images" name="reddit.png"></h:graphicImage>
-		<h:form>
-			<h:panelGrid border="0" columns="1">
-				<h:inputTextarea id="comment" value="Your comment..."></h:inputTextarea>
-				<h:commandButton id="commentSubmit" value="Post comment"></h:commandButton>			
-			</h:panelGrid>
-		</h:form>
-	</h:panelGrid>
+					<p>The HelloWorld UI Component:</p>
+					<rc:votetree
+						hellomsg="Hello world! This is output from a custom JSF Component!" />
+				</h:form>
+
+
+				<h:outputText id="test" value="#{link.id}"></h:outputText>
+				<br />
+
+				<h:outputText id="test2"
+					value="Test Entry: ${linklist.fromId(link.id).title}"></h:outputText>
+				<br />
+
+				<h:panelGrid border="0" columns="2">
+					<h:graphicImage id="regSymbol" library="images" name="reddit.png"></h:graphicImage>
+					<h:form>
+						<h:panelGrid border="0" columns="1">
+							<h:inputTextarea id="comment" value="Your comment..."></h:inputTextarea>
+							<h:commandButton id="commentSubmit" value="Post comment" <!-- action=addComment -->>
+								<f:ajax execute="@form" render=":comments_panelGroup" />
+							</h:commandButton>
+						</h:panelGrid>
+					</h:form>
+				</h:panelGrid>
+			</h:panelGroup>
+		</ui:define>
+	</ui:composition>
 </body>
 </html>

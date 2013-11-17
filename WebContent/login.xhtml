@@ -7,40 +7,36 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 
-	<h:panelGroup layout="block" id="login_panelGroup">
 
-		<h:panelGroup rendered="#{!user.loggedIn}">
-			<h:panelGrid border="0" columns="3">
-				<h1>Reddit Clone</h1>
-				<h:form>
-					<h:inputText id="username" value="#{user.username}" />
-					<h:inputSecret id="password" value="#{user.password}" />
-					<h:commandButton value="Login" action="#{user.checkLogin}">
-						<f:ajax execute="@form" render=":login_panelGroup" />
-					</h:commandButton>
-				</h:form>
-				<h:form>
-					<h:commandButton value="Register" action="register.xhtml">
-					</h:commandButton>
-				</h:form>
-			</h:panelGrid>
-		</h:panelGroup>
+	<h:panelGroup rendered="#{!user.loggedIn}">
+		<h:panelGrid border="0" columns="3">
+			<h1>Reddit Clone</h1>
+			<h:form>
+				<h:inputText id="username" value="#{user.username}" />
+				<h:inputSecret id="password" value="#{user.password}" />
+				<h:commandButton value="Login" action="#{user.checkLogin}">
+				</h:commandButton>
+			</h:form>
+			<h:form>
+				<h:commandButton value="Register" action="register.xhtml" immediate="true">
+				</h:commandButton>
+			</h:form>
+		</h:panelGrid>
+	</h:panelGroup>
 
-		<h:panelGroup rendered="#{user.loggedIn}">
-			<h:panelGrid border="0" columns="4">
-				<h1>Reddit Clone</h1>
-				<h:form>
-					<h:commandButton id="addLink" value="Submit new Link"
-						action="linksubmit.xhtml" />
-				</h:form>
-				<h:outputText value="Hi #{user.username}" />
-				<h:form>
-					<h:commandButton value="Logout" action="#{user.logOut}">
-						<f:ajax execute="@form" render=":login_panelGroup" />
-					</h:commandButton>
-				</h:form>
-			</h:panelGrid>
-		</h:panelGroup>
+	<h:panelGroup rendered="#{user.loggedIn}">
+		<h:panelGrid border="0" columns="4">
+			<h1>Reddit Clone</h1>
+			<h:form>
+				<h:commandButton id="addLink" value="Submit new Link"
+					action="linksubmit.xhtml" immediate="true"/>
+			</h:form>
+			<h:outputText value="Hi #{user.username}" />
+			<h:form>
+				<h:commandButton value="Logout" action="#{user.logOut}" immediate="true">
+				</h:commandButton>
+			</h:form>
+		</h:panelGrid>
 
 	</h:panelGroup>
 </ui:composition>

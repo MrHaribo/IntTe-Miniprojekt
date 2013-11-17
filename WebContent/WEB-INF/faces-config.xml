@@ -51,21 +51,6 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<navigation-rule>
-		<display-name>linklist.xhtml</display-name>
-		<from-view-id>/linklist.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>comment_add</from-outcome>
-			<to-view-id>/commentsubmit.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<display-name>commentsubmit.xhtml</display-name>
-		<from-view-id>/commentsubmit.xhtml</from-view-id>
-		<navigation-case>
-			<to-view-id>/commentlist.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
 		<display-name>register.xhtml</display-name>
 		<from-view-id>/register.xhtml</from-view-id>
 		<navigation-case>
@@ -79,6 +64,30 @@
 		<navigation-case>
 			<from-outcome>link_submit</from-outcome>
 			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>linksubmit.xhtml</display-name>
+		<from-view-id>/linksubmit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>loggedOut</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>register.xhtml</display-name>
+		<from-view-id>/register.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>loggedIn</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>showComments</from-outcome>
+			<to-view-id>/commentsubmit.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
