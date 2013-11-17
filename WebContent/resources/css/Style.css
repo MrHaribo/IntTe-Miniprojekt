@@ -1,8 +1,13 @@
 
+body {
+	font-family: "Arial", Arial, Sans-serif;
+}
+
 #header {
 	background-color: #424242;
 	font-weight: bold;
 	color: white;
+	padding: 5px;
 }
 
 #top {
@@ -13,4 +18,40 @@
 #content {
 	color: black;
 	background-color: white;
+}
+
+h2 {
+	font-weight: bold;
+	color: green;
+}
+
+.linkGrid {
+	background-image: url('images/linkbg.png');
+	width: 600px;
+	height: 170px;
+	border: none;
+	color: white;
+	padding: 5px;
+}
+
+.linkGrid td {
+	border: none !important;
+}
+
+#title {
+	font-weight: bold;
+}
+
+.voteUp {
+	background: url('images/upbtn.png');
+	width: 40px;
+	height: 40px;
+	border: none;
+}
+
+.voteDown {
+	background: url('images/downbtn.png');
+	width: 40px;
+	height: 40px;
+	border: none;
 }
