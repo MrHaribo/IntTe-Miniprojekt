@@ -26,6 +26,14 @@
 
 				<h:outputText id="test" value="#{link.id}"></h:outputText>
 				<br />
+				
+				<rc:commentsubmit/>
+				
+				<h:panelGroup rendered="#{not linklist.isCommentSelected}">
+				    <rc:commentsubmit/>
+				</h:panelGroup>
+				
+				
 
 				<h:outputText id="test2"
 					value="Test Entry: ${linklist.fromId(link.id).title}"></h:outputText>
@@ -42,11 +50,30 @@
 							<h:outputText id="info" value="Created: #{comment.creationDate}" />
 							<h:outputText id="numComments" value="Num Comments: #{comment.children.size}" />
 							
-							<h:commandButton id="postcomment" value="Post Comment" action="${comment.createChildComment}">
+							<h:commandButton id="select" value="Select" 
+								action="${comment.select}">
 								<f:ajax execute="@form" render=":comments_panelGroup" />
 							</h:commandButton>
 			
 						</h:panelGrid>
+						
+						<h:panelGroup rendered="#{comment.selected}">
+						
+							<h:form>
+								<h:panelGrid border="0" columns="3">
+								
+									<rc:commentsubmit/>
+									
+									<h:inputTextarea value="#{comment.commentToCreate}"></h:inputTextarea>
+				    				<h:commandButton id="postcomment" value="Submit comment" action="${comment.createChildComment}">
+										<f:ajax execute="@form" render=":comments_panelGroup" />
+									</h:commandButton>
+							
+								</h:panelGrid>
+							</h:form>
+						
+						</h:panelGroup>
+						
 					</h:form>
 					<br />
 			

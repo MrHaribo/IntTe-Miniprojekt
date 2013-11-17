@@ -6,7 +6,7 @@ public class Link extends VoteEntry {
 	
 	private String title;
 	private String url;
-	
+
 	public String createLink() {
 		linklist.addEntry(this);
 		return "linklist.xhtml";

@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class Linklist extends VoteList<Link> {
+	
+	private Comment selectedComment = null;
 
 	public Linklist() {
 		
@@ -69,4 +71,20 @@ public class Linklist extends VoteList<Link> {
 	public void setLinks(ArrayList<Link> links) {
 		this.entries = links;
 	}
+	
+	//TODO: maybe relocate this code (its here because its app scope)---
+
+	public Comment getSelectedComment() {
+		return selectedComment;
+	}
+
+	public void setSelectedComment(Comment selectedComment) {
+		this.selectedComment = selectedComment;
+	}
+	
+	public boolean getIsCommentSelected() {
+		return selectedComment != null;
+	}
+	
+	// END todo: maybe relocate this code---
 }

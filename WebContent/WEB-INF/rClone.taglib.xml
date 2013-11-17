@@ -14,4 +14,9 @@
 	  </component>
   </tag>
   
+  <tag>
+	<tag-name>commentsubmit</tag-name>
+	<source>tags/rename_to_commentsubmit.xhtml</source>
+  </tag>
+  
 </facelet-taglib>
