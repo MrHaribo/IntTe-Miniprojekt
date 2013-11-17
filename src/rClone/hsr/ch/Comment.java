@@ -5,27 +5,32 @@ import javax.faces.context.FacesContext;
 public class Comment extends VoteEntry {
 	
 	private String text;
-	private String commentToCreate;
 	private boolean selected;
 	
 	public void select() {
 		FacesContext context = FacesContext.getCurrentInstance();
-		Linklist linklist = (Linklist) context.getApplication().evaluateExpressionGet(context, "#{linklist}", Linklist.class);
+		CommentCreation commentSelection = (CommentCreation) context.getApplication().
+				evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
 		
-		if (linklist.getIsCommentSelected())
-			linklist.getSelectedComment().setSelected(false);
+		if (commentSelection.getIsCommentSelected())
+			commentSelection.getSelectedComment().setSelected(false);
 		this.setSelected(true);
 		
-		linklist.setSelectedComment(this);
+		commentSelection.setSelectedComment(this);
 	}
 	
 	public void createChildComment() {
-		System.out.println("creadted child comment for: " + text);
+		FacesContext context = FacesContext.getCurrentInstance();
+		CommentCreation commentCreation = (CommentCreation) context.getApplication().
+			evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
 		
 		Comment newComment = new Comment();
-		newComment.setText(commentToCreate);
-		newComment.setParent(this);
-		getChildren().addEntry(newComment);	
+		newComment.setText(commentCreation.getCommentToCreate());
+		addChildEntry(newComment);
+	}
+	
+	public int getMargin() {
+		return getLevel() * 30;
 	}
 
 	public String getText() {
@@ -34,12 +39,6 @@ public class Comment extends VoteEntry {
 	public void setText(String text) {
 		this.text = text;
 	}
-	public String getCommentToCreate() {
-		return commentToCreate;
-	}
-	public void setCommentToCreate(String commentToCreate) {
-		this.commentToCreate = commentToCreate;
-	}	
 	public boolean getSelected() {
 		return selected;
 	}

@@ -6,8 +6,6 @@ import java.util.List;
 
 public class Linklist extends VoteList<Link> {
 	
-	private Comment selectedComment = null;
-
 	public Linklist() {
 		
 		Link l1 = new Link();
@@ -55,6 +53,13 @@ public class Linklist extends VoteList<Link> {
 		l2.getChildren().addEntry(c4);
 		c4.getChildren().addEntry(c5);
 
+		c1.setLevel(1);
+		c2.setLevel(1);
+		c3.setLevel(2);
+		c4.setLevel(1);
+		c5.setLevel(2);
+		
+		
 		addEntry(l1);
 		addEntry(l2);
 		addEntry(l3);
@@ -71,20 +76,4 @@ public class Linklist extends VoteList<Link> {
 	public void setLinks(ArrayList<Link> links) {
 		this.entries = links;
 	}
-	
-	//TODO: maybe relocate this code (its here because its app scope)---
-
-	public Comment getSelectedComment() {
-		return selectedComment;
-	}
-
-	public void setSelectedComment(Comment selectedComment) {
-		this.selectedComment = selectedComment;
-	}
-	
-	public boolean getIsCommentSelected() {
-		return selectedComment != null;
-	}
-	
-	// END todo: maybe relocate this code---
 }

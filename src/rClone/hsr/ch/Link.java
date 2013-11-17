@@ -1,5 +1,7 @@
 package rClone.hsr.ch;
 
+import javax.faces.context.FacesContext;
+
 public class Link extends VoteEntry {
 	
 	private Linklist linklist;
@@ -8,8 +10,20 @@ public class Link extends VoteEntry {
 	private String url;
 
 	public String createLink() {
+		setLevel(0);
 		linklist.addEntry(this);
 		return "linklist.xhtml";
+	}
+	public void createComment() {
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		CommentCreation commentCreation = (CommentCreation) context.getApplication().
+			evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
+		
+		Comment newComment = new Comment();
+		newComment.setText(commentCreation.getCommentToCreate());
+		newComment.setLevel(1);
+		addChildEntry(newComment);
 	}
 	
 	public Linklist getLinklist() {

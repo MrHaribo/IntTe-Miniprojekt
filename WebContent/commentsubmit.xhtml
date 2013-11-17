@@ -26,23 +26,34 @@
 
 				<h:outputText id="test" value="#{link.id}"></h:outputText>
 				<br />
-				
-				<rc:commentsubmit/>
-				
-				<h:panelGroup rendered="#{not linklist.isCommentSelected}">
-				    <rc:commentsubmit/>
-				</h:panelGroup>
-				
-				
-
 				<h:outputText id="test2"
 					value="Test Entry: ${linklist.fromId(link.id).title}"></h:outputText>
 				<br />
 				
+				<h:commandButton id="postlinkcomment" value="Reset selection" action="${commentCreation.resetSelection}">
+					<f:ajax execute="@form" render=":comments_panelGroup" />
+				</h:commandButton>
+				
+				<h:panelGroup rendered="#{not commentCreation.isCommentSelected}">
+				
+				    <h:form>
+						<h:panelGrid border="0" columns="3">
+						
+							<rc:commentsubmit/>
+							<h:inputTextarea value="#{commentCreation.commentToCreate}"></h:inputTextarea>
+		    				<h:commandButton id="postcomment" value="Submit comment" action="${linklist.fromId(link.id).createComment}">
+								<f:ajax execute="@form" render=":comments_panelGroup" />
+							</h:commandButton>
+					
+						</h:panelGrid>
+					</h:form>
+				    
+				</h:panelGroup>
+				
 				<p:forEach var="comment" items="#{linklist.fromId(link.id).children.preorderList}">
 	
 					<h:form>
-						<h:panelGrid border="1" columns="2">
+						<h:panelGrid border="1" columns="2" style="margin-left:#{comment.margin}px;">
 			
 			
 							<h:outputText id="title" value="#{comment.text}"></h:outputText>
@@ -64,7 +75,7 @@
 								
 									<rc:commentsubmit/>
 									
-									<h:inputTextarea value="#{comment.commentToCreate}"></h:inputTextarea>
+									<h:inputTextarea value="#{commentCreation.commentToCreate}"></h:inputTextarea>
 				    				<h:commandButton id="postcomment" value="Submit comment" action="${comment.createChildComment}">
 										<f:ajax execute="@form" render=":comments_panelGroup" />
 									</h:commandButton>
@@ -78,18 +89,6 @@
 					<br />
 			
 				</p:forEach>
-
-				<h:panelGrid border="0" columns="2">
-					<h:graphicImage id="regSymbol" library="images" name="reddit.png"></h:graphicImage>
-					<h:form>
-						<h:panelGrid border="0" columns="1">
-							<h:inputTextarea id="comment" value="Your comment..."></h:inputTextarea>
-							<h:commandButton id="commentSubmit" value="Post comment">
-								<f:ajax execute="@form" render=":comments_panelGroup" />
-							</h:commandButton>
-						</h:panelGrid>
-					</h:form>
-				</h:panelGrid>
 				
 				<h:form>
 					<rc:useless linkid="#{link.id}" hellomsg=	"Das isch de useless component wo i gmacht han!
