@@ -23,6 +23,7 @@ public class VoteEntry {
 	private int votes;
 	Date creationDate;
 	
+	private VoteEntry parent;
 	private VoteList<VoteEntry> children = new VoteList<VoteEntry>();
 	
 	public String voteUp() {
@@ -62,4 +63,11 @@ public class VoteEntry {
 	public void setChildren(VoteList<VoteEntry> children) {
 		this.children = children;
 	}
+	public VoteEntry getParent() {
+		return parent;
+	}
+	public void setParent(VoteEntry parent) {
+		this.parent = parent;
+	}
+	
 }

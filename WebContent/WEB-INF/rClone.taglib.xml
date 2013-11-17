@@ -7,10 +7,10 @@
   <namespace>http://hsr.ch/rClone</namespace>
 
   <tag>
-	  <tag-name>votetree</tag-name>
+	  <tag-name>useless</tag-name>
 	  <component>
-	    <component-type>rClone.hsr.ch.VoteTree</component-type>
-	    <renderer-type>rClone.hsr.ch.VoteTree</renderer-type>
+	    <component-type>rClone.hsr.ch.Useless</component-type>
+	    <renderer-type>rClone.hsr.ch.Useless</renderer-type>
 	  </component>
   </tag>
   

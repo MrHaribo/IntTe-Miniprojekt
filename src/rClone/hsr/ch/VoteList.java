@@ -1,8 +1,10 @@
 package rClone.hsr.ch;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 public class VoteList<T extends VoteEntry> {
 	
@@ -35,5 +37,24 @@ public class VoteList<T extends VoteEntry> {
 	
 	public int getSize() {
 		return entries.size();
+	}
+	
+	public ArrayList<T> getEntries() {
+		return entries;
+	}
+	
+	public List<VoteEntry> getPreorderList() throws IOException {
+		ArrayList<VoteEntry> tmp = new ArrayList<VoteEntry>();
+		for (VoteEntry entry : entries) {
+			traverseTree(tmp, entry);
+		}
+		return tmp;
+	}
+	
+	private void traverseTree(List<VoteEntry> returnList, VoteEntry root) {
+		returnList.add(root);
+		for (VoteEntry entry : root.getChildren().getEntries()) {
+			traverseTree(returnList, entry);  
+		}
 	}
 }

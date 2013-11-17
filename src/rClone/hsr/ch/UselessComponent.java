@@ -7,7 +7,7 @@ import javax.faces.component.UIComponentBase;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-public class VoteTreeComponent extends UIComponentBase
+public class UselessComponent extends UIComponentBase
 {
 
   public void encodeBegin(FacesContext context) throws IOException

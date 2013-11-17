@@ -6,8 +6,8 @@
     version="2.2">
     
 	<component>
-		<component-type>rClone.hsr.ch.VoteTree</component-type>
-		<component-class>rClone.hsr.ch.VoteTreeComponent</component-class>
+		<component-type>rClone.hsr.ch.Useless</component-type>
+		<component-class>rClone.hsr.ch.UselessComponent</component-class>
 	</component>
     
 	<managed-bean>

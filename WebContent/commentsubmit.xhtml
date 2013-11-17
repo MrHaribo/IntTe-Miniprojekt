@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://java.sun.com/jsp/jstl/core"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html" xmlns:rc="http://hsr.ch/rClone"
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:rc="http://hsr.ch/rClone"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
@@ -21,16 +23,6 @@
 		<ui:define name="content_top" />
 		<ui:define name="content_main">
 			<h:panelGroup layout="block" id="comments_panelGroup">
-				<h:form>
-
-
-					<p>A simple HelloWorld Custom Component:</p>
-
-					<p>The HelloWorld UI Component:</p>
-					<rc:votetree
-						hellomsg="Hello world! This is output from a custom JSF Component!" />
-				</h:form>
-
 
 				<h:outputText id="test" value="#{link.id}"></h:outputText>
 				<br />
@@ -38,18 +30,48 @@
 				<h:outputText id="test2"
 					value="Test Entry: ${linklist.fromId(link.id).title}"></h:outputText>
 				<br />
+				
+				<p:forEach var="comment" items="#{linklist.fromId(link.id).children.preorderList}">
+	
+					<h:form>
+						<h:panelGrid border="1" columns="2">
+			
+			
+							<h:outputText id="title" value="#{comment.text}"></h:outputText>
+							<h:outputText value="#{comment.votes}"></h:outputText>
+							<h:outputText id="info" value="Created: #{comment.creationDate}" />
+							<h:outputText id="numComments" value="Num Comments: #{comment.children.size}" />
+							
+							<h:commandButton id="postcomment" value="Post Comment" action="${comment.createChildComment}">
+								<f:ajax execute="@form" render=":comments_panelGroup" />
+							</h:commandButton>
+			
+						</h:panelGrid>
+					</h:form>
+					<br />
+			
+				</p:forEach>
 
 				<h:panelGrid border="0" columns="2">
 					<h:graphicImage id="regSymbol" library="images" name="reddit.png"></h:graphicImage>
 					<h:form>
 						<h:panelGrid border="0" columns="1">
 							<h:inputTextarea id="comment" value="Your comment..."></h:inputTextarea>
-							<h:commandButton id="commentSubmit" value="Post comment" <!-- action=addComment -->>
+							<h:commandButton id="commentSubmit" value="Post comment">
 								<f:ajax execute="@form" render=":comments_panelGroup" />
 							</h:commandButton>
 						</h:panelGrid>
 					</h:form>
 				</h:panelGrid>
+				
+				<h:form>
+					<rc:useless linkid="#{link.id}" hellomsg=	"Das isch de useless component wo i gmacht han!
+																i will aber no vom Dozent wüsse wa min Fehler isch, 
+																deswege isch es no drin">
+						<h:outputText id="test2" value="More useless Child"></h:outputText>
+					</rc:useless>
+				</h:form>
+				
 			</h:panelGroup>
 		</ui:define>
 	</ui:composition>
