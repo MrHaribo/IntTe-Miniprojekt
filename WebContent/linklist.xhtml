@@ -20,14 +20,14 @@
 			<p:forEach var="link" items="#{linklist.links}">
 
 				<h:form>
-					<h:panelGrid border="1" columns="2">
-						<h:commandButton id="voteup" value="up" action="#{link.voteUp}">
+					<h:panelGrid class="linkGrid" border="1" columns="2">
+						<h:commandButton class="voteUp" id="voteup" value="" action="#{link.voteUp}">
 							<f:ajax execute="@form" render=":linklist_panelGroup" />
 						</h:commandButton>
 						<h:outputText id="title" value="#{link.title}"></h:outputText>
 						<h:outputText value="#{link.votes}"></h:outputText>
 						<h:outputText id="info" value="Created: #{link.creationDate}" />
-						<h:commandButton id="votedown" value="down"
+						<h:commandButton class="voteDown" id="votedown" value=""
 							action="#{link.voteDown}">
 							<f:ajax execute="@form" render=":linklist_panelGroup" />
 						</h:commandButton>
