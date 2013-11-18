@@ -10,6 +10,7 @@ public class Linklist extends VoteList<Link> {
 		
 		Link l1 = new Link();
 		l1.setTitle("link1");
+		l1.setUrl("http://www.google.ch");
 		l1.setVotes(105);
 		
 		Link l2 = new Link();
