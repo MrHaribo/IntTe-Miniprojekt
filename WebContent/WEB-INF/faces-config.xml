@@ -56,22 +56,6 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<navigation-rule>
-		<display-name>register.xhtml</display-name>
-		<from-view-id>/register.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>registered</from-outcome>
-			<to-view-id>/index.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<display-name>linksubmit.xhtml</display-name>
-		<from-view-id>/linksubmit.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>link_submit</from-outcome>
-			<to-view-id>/index.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
 		<display-name>linksubmit.xhtml</display-name>
 		<from-view-id>/linksubmit.xhtml</from-view-id>
 		<navigation-case>
