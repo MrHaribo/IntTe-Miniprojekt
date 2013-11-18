@@ -1,17 +1,36 @@
 package rClone.hsr.ch;
 
+import javax.faces.context.FacesContext;
+
 public class Comment extends VoteEntry {
 	
 	private String text;
-	private String commentToCreate;
+	private boolean selected;
 	
-	public void createChildComment() {
-		System.out.println("creadted child comment for: " + text);
+	public void select() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		CommentCreation commentSelection = (CommentCreation) context.getApplication().
+				evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
+		
+		if (commentSelection.getIsCommentSelected())
+			commentSelection.getSelectedComment().setSelected(false);
+		this.setSelected(true);
+		
+		commentSelection.setSelectedComment(this);
+	}
+	
+	public void createChild() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		CommentCreation commentCreation = (CommentCreation) context.getApplication().
+			evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
 		
 		Comment newComment = new Comment();
-		newComment.setText(commentToCreate);
-		newComment.setParent(this);
-		getChildren().addEntry(newComment);	
+		newComment.setText(commentCreation.getCommentToCreate());
+		addChildEntry(newComment);
+	}
+	
+	public int getMargin() {
+		return getLevel() * 30;
 	}
 
 	public String getText() {
@@ -20,11 +39,10 @@ public class Comment extends VoteEntry {
 	public void setText(String text) {
 		this.text = text;
 	}
-	public String getCommentToCreate() {
-		return commentToCreate;
+	public boolean getSelected() {
+		return selected;
 	}
-	public void setCommentToCreate(String commentToCreate) {
-		this.commentToCreate = commentToCreate;
-	}	
-	
+	public void setSelected(boolean selected) {
+		this.selected = selected;
+	}
 }

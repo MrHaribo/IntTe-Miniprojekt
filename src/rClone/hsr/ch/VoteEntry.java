@@ -22,6 +22,7 @@ public class VoteEntry {
 	private int id;
 	private int votes;
 	Date creationDate;
+	private int level;
 	
 	private VoteEntry parent;
 	private VoteList<VoteEntry> children = new VoteList<VoteEntry>();
@@ -37,6 +38,12 @@ public class VoteEntry {
 		if (this.votes > 0)
 			this.votes--;
 		return "link voted down";
+	}
+	
+	public void addChildEntry(VoteEntry child) {
+		child.setParent(this);
+		child.setLevel(getLevel()+1);
+		children.addEntry(child);
 	}
 	
 	public int getId() {
@@ -56,6 +63,12 @@ public class VoteEntry {
 	}
 	public void setCreationDate(Date crationDate) {
 		this.creationDate = crationDate;
+	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	public VoteList<VoteEntry> getChildren() {
 		return children;

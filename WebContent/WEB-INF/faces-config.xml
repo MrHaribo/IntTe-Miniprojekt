@@ -50,6 +50,11 @@
 		<managed-bean-class>rClone.hsr.ch.NavigationBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>commentCreation</managed-bean-name>
+		<managed-bean-class>rClone.hsr.ch.CommentCreation</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	<navigation-rule>
 		<display-name>register.xhtml</display-name>
 		<from-view-id>/register.xhtml</from-view-id>
