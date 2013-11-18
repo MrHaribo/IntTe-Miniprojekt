@@ -20,7 +20,7 @@ public class VoteEntry {
 	} 
 	
 	private int id;
-	private int votes;
+	private int votes=0;
 	Date creationDate;
 	private int level;
 	

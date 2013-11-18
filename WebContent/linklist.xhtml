@@ -24,7 +24,9 @@
 						<h:commandButton class="voteUp" id="voteup" value="" action="#{link.voteUp}">
 							<f:ajax execute="@form" render=":linklist_panelGroup" />
 						</h:commandButton>
-						<h:commandLink id="title" value="#{link.title}" action="#{link.openUrl}"></h:commandLink>
+						<h:outputLink value="#{link.url}">
+							<h:outputText value="#{link.title}"></h:outputText>
+						</h:outputLink>
 						<h:outputText value="#{link.votes}"></h:outputText>
 						<h:outputText id="info" value="Created: #{link.creationDate}" />
 						<h:commandButton class="voteDown" id="votedown" value=""

@@ -10,6 +10,18 @@ body {
 	padding: 5px;
 }
 
+#pagetitleLogout {
+	font-size: xx-large;
+	text-decoration: none;
+	color: white;
+}
+
+#pagetitleLogin {
+	font-size: xx-large;
+	text-decoration: none;
+	color: white;
+}
+
 #top {
 	background-color: #E6E6E6;
 	color: black; 

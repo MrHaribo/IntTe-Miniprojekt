@@ -15,18 +15,22 @@ public class Linklist extends VoteList<Link> {
 		
 		Link l2 = new Link();
 		l2.setTitle("link2");
+		l2.setUrl("http://www.hsr.ch");
 		l2.setVotes(103);
 		
 		Link l3 = new Link();
 		l3.setTitle("link3");
+		l3.setUrl("http://www.hsr.ch");
 		l3.setVotes(50);
 		
 		Link l4 = new Link();
 		l4.setTitle("link4");
+		l4.setUrl("http://www.hsr.ch");
 		l4.setVotes(0);
 		
 		Link l5 = new Link();
 		l5.setTitle("link5");
+		l5.setUrl("http://www.hsr.ch");
 		
 		Comment c1 = new Comment();
 		c1.setVotes(10);

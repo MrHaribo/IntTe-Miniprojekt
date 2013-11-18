@@ -7,7 +7,7 @@ public class Link extends VoteEntry {
 	private Linklist linklist;
 	
 	private String title;
-	private String url;
+	private String url="index.html";
 
 	public String createLink() {
 		setLevel(0);
@@ -44,8 +44,5 @@ public class Link extends VoteEntry {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	
-	public String openUrl() {
-		return url;
-	}
+
 }

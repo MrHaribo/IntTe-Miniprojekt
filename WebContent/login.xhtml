@@ -10,7 +10,9 @@
 
 	<h:panelGroup rendered="#{!user.loggedIn}">
 		<h:panelGrid border="0" columns="3">
-			<h1>Reddit Clone</h1>
+			<h:outputLink id="pagetitleLogout"  value="index.xhtml">
+				<h:outputText value="Reddit Clone"></h:outputText>
+			</h:outputLink>
 			<h:form>
 				<h:inputText id="username" value="#{user.username}" />
 				<h:inputSecret id="password" value="#{user.password}" />
@@ -18,7 +20,8 @@
 				</h:commandButton>
 			</h:form>
 			<h:form>
-				<h:commandButton value="Register" action="register.xhtml" immediate="true">
+				<h:commandButton value="Register" action="register.xhtml"
+					immediate="true">
 				</h:commandButton>
 			</h:form>
 		</h:panelGrid>
@@ -26,14 +29,17 @@
 
 	<h:panelGroup rendered="#{user.loggedIn}">
 		<h:panelGrid border="0" columns="4">
-			<h1>Reddit Clone</h1>
+			<h:outputLink id= "pagetitleLogin" value="index.xhtml">
+				<h:outputText value="Reddit Clone"></h:outputText>
+			</h:outputLink>
 			<h:form>
 				<h:commandButton id="addLink" value="Submit new Link"
-					action="linksubmit.xhtml" immediate="true"/>
+					action="linksubmit.xhtml" immediate="true" />
 			</h:form>
 			<h:outputText value="Hi #{user.username}" />
 			<h:form>
-				<h:commandButton value="Logout" action="#{user.logOut}" immediate="true">
+				<h:commandButton value="Logout" action="#{user.logOut}"
+					immediate="true">
 				</h:commandButton>
 			</h:form>
 		</h:panelGrid>
