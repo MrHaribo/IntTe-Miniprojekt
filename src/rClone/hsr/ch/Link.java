@@ -9,6 +9,15 @@ public class Link extends VoteEntry {
 	private String title;
 	private String url="http://";
 
+	public String select() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		Linklist linklist = (Linklist) context.getApplication().
+				evaluateExpressionGet(context, "#{linklist}", Linklist.class);
+		linklist.setSelectedLink(this);
+		return "commentsubmit.xhtml";
+	}
+
+	
 	public String createLink() {
 		
 		String regex = "^(https?)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
