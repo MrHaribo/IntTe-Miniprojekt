@@ -6,6 +6,8 @@ import java.util.List;
 
 public class Linklist extends VoteList<Link> {
 	
+	private Link selectedLink;
+	
 	public Linklist() {
 		
 		Link l1 = new Link();
@@ -81,8 +83,12 @@ public class Linklist extends VoteList<Link> {
 	public void setLinks(ArrayList<Link> links) {
 		this.entries = links;
 	}
-	
-	public void someFunction() {
-		System.out.println("some Action");
+
+	public Link getSelectedLink() {
+		return selectedLink;
+	}
+
+	public void setSelectedLink(Link selectedLink) {
+		this.selectedLink = selectedLink;
 	}
 }

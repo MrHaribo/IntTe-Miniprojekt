@@ -34,9 +34,7 @@
 							<f:ajax execute="@form" render=":linklist_panelGroup" />
 						</h:commandButton>
 
-						<h:commandLink action="showComments" includeViewParams="true"
-							value="Comments: #{link.children.size}">
-							<f:param name="linkId" value="#{link.id}" />
+						<h:commandLink action="#{link.select}" value="Comments: #{link.children.size}">
 						</h:commandLink>
 						
 
