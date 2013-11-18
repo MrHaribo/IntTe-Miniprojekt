@@ -90,5 +90,21 @@
 			<to-view-id>/commentsubmit.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	<navigation-rule>
+		<display-name>linksubmit.xhtml</display-name>
+		<from-view-id>/linksubmit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>showComments</from-outcome>
+			<to-view-id>/commentsubmit.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>register.xhtml</display-name>
+		<from-view-id>/register.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>showComments</from-outcome>
+			<to-view-id>/commentsubmit.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>

@@ -30,4 +30,8 @@ public class Link extends VoteEntry {
 	public void setUrl(String url) {
 		this.url = url;
 	}
+	
+	public String openUrl() {
+		return url;
+	}
 }
