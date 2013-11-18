@@ -12,7 +12,7 @@ public class Link extends VoteEntry {
 	public String createLink() {
 		setLevel(0);
 		linklist.addEntry(this);
-		return "linklist.xhtml";
+		return "index.xhtml";
 	}
 	public void createChild() {
 		
