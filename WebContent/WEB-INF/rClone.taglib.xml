@@ -16,7 +16,7 @@
   
   <tag>
 	<tag-name>commentsubmit</tag-name>
-	<source>tags/rename_to_commentsubmit.xhtml</source>
+	<source>tags/commentcreation.xhtml</source>
   </tag>
   
 </facelet-taglib>
