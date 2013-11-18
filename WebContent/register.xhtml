@@ -23,7 +23,7 @@
 					<h:panelGrid border="0" columns="1">
 						<h:inputText id="regUsername" value="#{user.username}" />
 						<h:inputText id="regPassword" value="#{user.password}" />
-						<h:inputText id="regRepPassword" value="Repeat Password" />
+						<h:inputText id="regRepPassword" value="#{user.passRepeat}" />
 						<h:commandButton id="regSubmit" value="Register" action="#{user.register}">
 						</h:commandButton>
 					</h:panelGrid>

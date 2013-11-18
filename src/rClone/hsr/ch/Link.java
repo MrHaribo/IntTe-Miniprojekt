@@ -20,14 +20,14 @@ public class Link extends VoteEntry {
 	
 	public String createLink() {
 		
-		String regex = "^(https?)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+		String regex = "^(https?)://([\\w]*\\.)?[\\w]*\\.[\\w]*";
 		
-		if (url.matches(regex)){		
+		if (url.matches(regex) && !title.equals("")){		
 			setLevel(0);
 			linklist.addEntry(this);
 			return "index.xhtml";
 		}
-		return "index.xhtml";
+		return "linksubmit.xhtml";
 	}
 	public void createChild() {
 		

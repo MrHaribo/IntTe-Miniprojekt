@@ -8,11 +8,17 @@ import javax.faces.bean.ManagedBean;
 public class User {
 	private String username = "Username";
 	private String password = "Password";
+	private String passRepeat = "Repeat Password";
 	private boolean loggedIn = false;
 	private HashMap<String, User> users;
 	
 	public User(){
 		
+	}
+
+	public User(String username, String password) {
+		setUsername(username);
+		setPassword(password);
 	}
 	
 	public boolean isLoggedIn() {
@@ -22,13 +28,14 @@ public class User {
 	public void setLoggedIn(boolean loggedIn) {
 		this.loggedIn = loggedIn;
 	}
-
-	public User(String username, String password) {
-		setUsername(username);
-		setPassword(password);
-	}
 	
+	public String getPassRepeat() {
+		return passRepeat;
+	}
 
+	public void setPassRepeat(String passRepeat) {
+		this.passRepeat = passRepeat;
+	}
 	
 	public String getUsername() {
 		return username;
@@ -71,15 +78,15 @@ public class User {
 	}
 	
 	public String register() {
-		
-		User u = new User();
-		u.setPassword(password);
-		u.setUsername(username);
+		if (password.equals(passRepeat) && !users.containsKey(username)) {
+		User u = new User(username, password);
 		
 		users.put(username, u);
 		
 		checkLogin();
-		return "registered";
+		return "index.xhtml";
+		}
+		else return "register.xhtml";
 	}
 	
 	
