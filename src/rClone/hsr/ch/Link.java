@@ -7,11 +7,17 @@ public class Link extends VoteEntry {
 	private Linklist linklist;
 	
 	private String title;
-	private String url="index.html";
+	private String url="http://";
 
 	public String createLink() {
-		setLevel(0);
-		linklist.addEntry(this);
+		
+		String regex = "^(https?)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+		
+		if (url.matches(regex)){		
+			setLevel(0);
+			linklist.addEntry(this);
+			return "index.xhtml";
+		}
 		return "index.xhtml";
 	}
 	public void createChild() {
