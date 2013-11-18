@@ -14,7 +14,7 @@ public class Link extends VoteEntry {
 		linklist.addEntry(this);
 		return "linklist.xhtml";
 	}
-	public void createComment() {
+	public void createChild() {
 		
 		FacesContext context = FacesContext.getCurrentInstance();
 		CommentCreation commentCreation = (CommentCreation) context.getApplication().

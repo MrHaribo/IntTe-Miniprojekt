@@ -30,24 +30,14 @@
 					value="Test Entry: ${linklist.fromId(link.id).title}"></h:outputText>
 				<br />
 				
-				<h:commandButton id="postlinkcomment" value="Reset selection" action="${commentCreation.resetSelection}">
+				<h:commandButton id="resetSelection" value="Reset selection" action="${commentCreation.resetSelection}" immediate="true">
 					<f:ajax execute="@form" render=":comments_panelGroup" />
 				</h:commandButton>
 				
 				<h:panelGroup rendered="#{not commentCreation.isCommentSelected}">
-				
-				    <h:form>
-						<h:panelGrid border="0" columns="3">
-						
-							<rc:commentsubmit/>
-							<h:inputTextarea value="#{commentCreation.commentToCreate}"></h:inputTextarea>
-		    				<h:commandButton id="postcomment" value="Submit comment" action="${linklist.fromId(link.id).createComment}">
-								<f:ajax execute="@form" render=":comments_panelGroup" />
-							</h:commandButton>
-					
-						</h:panelGrid>
-					</h:form>
-				    
+	
+					<rc:commentsubmit voteentry="#{linklist.fromId(link.id)}" render=":comments_panelGroup"/>
+
 				</h:panelGroup>
 				
 				<p:forEach var="comment" items="#{linklist.fromId(link.id).children.preorderList}">
@@ -55,14 +45,13 @@
 					<h:form>
 						<h:panelGrid border="1" columns="2" style="margin-left:#{comment.margin}px;">
 			
-			
 							<h:outputText id="title" value="#{comment.text}"></h:outputText>
 							<h:outputText value="#{comment.votes}"></h:outputText>
 							<h:outputText id="info" value="Created: #{comment.creationDate}" />
 							<h:outputText id="numComments" value="Num Comments: #{comment.children.size}" />
 							
 							<h:commandButton id="select" value="Select" 
-								action="${comment.select}">
+								action="${comment.select}" immediate="true">
 								<f:ajax execute="@form" render=":comments_panelGroup" />
 							</h:commandButton>
 			
@@ -70,18 +59,7 @@
 						
 						<h:panelGroup rendered="#{comment.selected}">
 						
-							<h:form>
-								<h:panelGrid border="0" columns="3">
-								
-									<rc:commentsubmit/>
-									
-									<h:inputTextarea value="#{commentCreation.commentToCreate}"></h:inputTextarea>
-				    				<h:commandButton id="postcomment" value="Submit comment" action="${comment.createChildComment}">
-										<f:ajax execute="@form" render=":comments_panelGroup" />
-									</h:commandButton>
-							
-								</h:panelGrid>
-							</h:form>
+							<rc:commentsubmit voteentry="#{comment}" render=":comments_panelGroup"/>
 						
 						</h:panelGroup>
 						

@@ -19,7 +19,7 @@ public class Comment extends VoteEntry {
 		commentSelection.setSelectedComment(this);
 	}
 	
-	public void createChildComment() {
+	public void createChild() {
 		FacesContext context = FacesContext.getCurrentInstance();
 		CommentCreation commentCreation = (CommentCreation) context.getApplication().
 			evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);

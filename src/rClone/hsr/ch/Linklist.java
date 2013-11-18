@@ -76,4 +76,8 @@ public class Linklist extends VoteList<Link> {
 	public void setLinks(ArrayList<Link> links) {
 		this.entries = links;
 	}
+	
+	public void someFunction() {
+		System.out.println("some Action");
+	}
 }
