@@ -6,6 +6,8 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
+import javax.faces.context.FacesContext;
+
 public class VoteEntry extends VoteList<VoteEntry> {
 	
 	public static class LinkVoteComparator implements Comparator<VoteEntry> {  
@@ -25,6 +27,7 @@ public class VoteEntry extends VoteList<VoteEntry> {
 	private int id;
 	private int votes=0;
 	private Date creationDate;
+	private String creator;
 	private int level;
 	
 	private VoteEntry parent;
@@ -46,6 +49,12 @@ public class VoteEntry extends VoteList<VoteEntry> {
 	public void addChildEntry(VoteEntry child) {
 		child.setParent(this);
 		child.setLevel(getLevel()+1);
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		String username = (String) context.getApplication().
+				evaluateExpressionGet(context, "#{user.username}", String.class);
+		child.setCreator(username);
+		
 		addEntry(child);
 	}
 	
@@ -80,6 +89,12 @@ public class VoteEntry extends VoteList<VoteEntry> {
 	}
 	public void setCreationDate(Date crationDate) {
 		this.creationDate = crationDate;
+	}
+	public String getCreator() {
+		return creator;
+	}
+	public void setCreator(String creator) {
+		this.creator = creator;
 	}
 	public int getLevel() {
 		return level;

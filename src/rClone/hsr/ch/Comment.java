@@ -23,9 +23,8 @@ public class Comment extends VoteEntry {
 			evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
 		
 		Comment newComment = new Comment();
-		newComment.setText(commentCreation.getCommentToCreate());
+		newComment.setText(commentCreation.getCommentToCreate());		
 		addChildEntry(newComment);
-		
 		return "commentsubmit.xhtml";
 	}
 	

@@ -14,10 +14,9 @@
 				</h:commandButton>
 
 				
-				<h:outputText id="info" value="#{msg['createdp1']} #{comment.hoursAgo} #{msg['createdp2']} ???" />
+				<h:outputText id="info" value="#{msg['createdp1']} #{comment.hoursAgo} #{msg['createdp2']} #{comment.creator}" />
 
 				<h:outputText value="#{comment.votes}"></h:outputText>
-				
 				<h:outputText value="#{comment.text}"></h:outputText>
 				
 				<h:commandButton class="voteDown" id="votedown" value="" action="#{comment.voteDown}">
