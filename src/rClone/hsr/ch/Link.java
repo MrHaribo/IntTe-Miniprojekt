@@ -14,6 +14,11 @@ public class Link extends VoteEntry {
 		Linklist linklist = (Linklist) context.getApplication().
 				evaluateExpressionGet(context, "#{linklist}", Linklist.class);
 		linklist.setSelectedLink(this);
+		
+		CommentCreation commentCreation = (CommentCreation) context.getApplication().
+				evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
+		commentCreation.selectVoteEntry(this);
+		
 		return "commentsubmit.xhtml";
 	}
 
