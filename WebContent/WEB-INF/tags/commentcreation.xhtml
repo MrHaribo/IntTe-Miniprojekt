@@ -4,19 +4,19 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-    <h:body>
-       <ui:composition>
- 			<h:form>
-				<h:panelGrid border="0" columns="3">
-					<h:graphicImage library="images" name="reddit.png"></h:graphicImage>
-					
-					<h:inputTextarea value="#{commentCreation.commentToCreate}"></h:inputTextarea>
+    
+      <ui:composition>
+		<h:form>
+			<h:panelGrid border="0" columns="3">
+				<h:graphicImage library="images" name="reddit.png"></h:graphicImage>
 				
-					<h:commandButton value="Submit comment" action="${voteentry.createChild}">
-						<f:ajax execute="@form" render="#{render}" />
-					</h:commandButton>
-				</h:panelGrid>
-			</h:form>
-       </ui:composition>
-    </h:body>
+				<h:inputTextarea value="#{commentCreation.commentToCreate}"></h:inputTextarea>
+			
+				<h:commandButton value="Submit comment" action="${voteentry.createChild}">
+					<f:ajax execute="@form" render="#{render}" />
+				</h:commandButton>
+			</h:panelGrid>
+		</h:form>
+      </ui:composition>
+
 </html>

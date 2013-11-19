@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition>
+		<h:form>
+			<h:panelGrid class="linkGrid" border="1" columns="2">
+				<h:commandButton class="voteUp" id="voteup" value="" action="#{link.voteUp}">
+					<f:ajax execute="@form" render="#{render}" />
+				</h:commandButton>
+				<h:outputLink value="#{link.url}">
+					<h:outputText value="#{link.title}"></h:outputText>
+				</h:outputLink>
+				<h:outputText value="#{link.votes}"></h:outputText>
+				<h:outputText id="info" value="Created: #{link.creationDate}" />
+				<h:commandButton class="voteDown" id="votedown" value="" action="#{link.voteDown}">
+					<f:ajax execute="@form" render="#{render}" />
+				</h:commandButton>
+
+				<h:commandLink action="#{link.select}" value="Comments: #{link.children.size}">
+				</h:commandLink>
+			</h:panelGrid>
+		</h:form>
+	</ui:composition>
+
+</html>
