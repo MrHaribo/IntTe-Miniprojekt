@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Reddit Clone</title>
 </h:head>
@@ -22,13 +23,14 @@
 				<h:form>
 					<h:panelGrid border="0" columns="2">
 						<h:outputLabel value="#{msg['username']}:" />
-						<h:inputText id="regUsername" value="#{user.username}" />
+						<p:inputText value="#{user.username}" label="#{msg['username']}" required="true"/>
 						<h:outputLabel value="#{msg['password']}:" />
-						<h:inputSecret id="regPassword" value="#{user.password}" />
+						<p:password id="pwd" label="#{msg['password']}" value="#{user.password}" match="pwd2" required="true"/>
 						<h:outputLabel value="#{msg['passRepeat']}:" />
-						<h:inputSecret id="regRepPassword" value="#{user.passRepeat}" />
+						<p:password id="pwd2" label="#{msg['password']}" value="#{user.passRepeat}" required="true" />
 					</h:panelGrid><br />
-					<h:commandButton  value="#{msg['register']}" action="#{user.register}" />
+					<p:messages id="messages" showDetail="true" autoUpdate="true"/>  <br />
+					<p:commandButton  value="#{msg['register']}" action="#{user.register}" ajax="false"/>
 				</h:form>
 			</h:panelGrid>
 		</ui:define>

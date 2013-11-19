@@ -6,7 +6,7 @@ import javax.faces.bean.ManagedBean;
 
 @ManagedBean
 public class User {
-	private String username = "Username";
+	private String username;
 	private String password;
 	private String passRepeat;
 	private boolean loggedIn = false;
@@ -82,8 +82,8 @@ public class User {
 	}
 
 	public String register() {
-		if (!username.equals("") && !username.equals("Username")) {
-			if (password.equals(passRepeat) && !users.containsKey(username)) {
+		if (!username.equals("Username")) {
+			if (!users.containsKey(username)) {
 				User u = new User(username, password);
 
 				users.put(username, u);

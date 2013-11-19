@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
@@ -24,11 +25,12 @@
 				<h:form>
 					<h:panelGrid border="0" columns="2">
 						<h:outputText value="#{msg['linktitle']}:" />
-						<h:inputText value="#{link.title}" />
+						<p:inputText value="#{link.title}" label="#{msg['linktitle']}" required="true"/>
 						<h:outputText value="URL:" />
-						<h:inputText value="#{link.url}" />
-						<h:commandButton value="#{msg['submit']}"
-							action="#{link.createLink}" />
+						<p:inputText value="#{link.url}" label="URL" required="true"/>
+						<p:messages id="messages" showDetail="true" autoUpdate="true"/>  <br />
+						<p:commandButton value="#{msg['submit']}"
+							action="#{link.createLink}" ajax="false"/>
 					</h:panelGrid>
 				</h:form>
 			</h:panelGrid>

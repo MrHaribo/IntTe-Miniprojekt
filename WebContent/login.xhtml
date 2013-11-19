@@ -13,13 +13,13 @@
 				<h:outputText value="Reddit Clone"></h:outputText>
 			</h:outputLink>
 			<h:form>
-				<p:inputText value="#{user.username}" required="true" />
-				<p:password value="#{user.password}" required="true" />
-				<h:commandButton value="#{msg['login']}" action="#{user.checkLogin}" />
+				<p:inputText value="#{user.username}" />
+				<p:password value="#{user.password}" />
+				<p:commandButton value="#{msg['login']}" actionListener="#{user.checkLogin}" ajax="false"/>
 			</h:form>
 			<h:form>
-				<h:commandButton value="#{msg['register']}" action="register.xhtml"
-					immediate="true" />
+				<p:commandButton value="#{msg['register']}" action="register.xhtml"
+					immediate="true" ajax="false"/>
 			</h:form>
 			<!-- 			<h:panelGroup> -->
 			<!-- 				<h:outputLabel value="#{msg['language']}:"></h:outputLabel> -->
@@ -36,16 +36,16 @@
 	<h:panelGroup rendered="#{user.loggedIn}">
 		<h:panelGrid border="0" columns="4">
 			<h:outputLink id="pagetitleLogin" value="index.xhtml">
-				<h:outputText value="Reddit Clone"></h:outputText>
+				<h:outputText value="Reddit Clone" />
 			</h:outputLink>
 			<h:form>
-				<h:commandButton value="#{msg['linksubmit']}"
-					action="linksubmit.xhtml" immediate="true" />
+				<p:commandButton value="#{msg['linksubmit']}"
+					action="linksubmit.xhtml" immediate="true" ajax="false" />
 			</h:form>
 			<h:outputText value="Hi #{user.username}" />
 			<h:form>
-				<h:commandButton value="#{msg['logout']}" action="#{user.logOut}"
-					immediate="true" />
+				<p:commandButton value="#{msg['logout']}" actionListener="#{user.logOut}"
+					immediate="true" ajax="false" />
 			</h:form>
 			<!-- 			<h:panelGroup> -->
 			<!-- 				<h:outputLabel value="#{msg['language']}:"></h:outputLabel> -->

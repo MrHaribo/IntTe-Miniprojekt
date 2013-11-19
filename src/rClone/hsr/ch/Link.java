@@ -19,7 +19,7 @@ public class Link extends VoteEntry {
 				evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
 		commentCreation.selectVoteEntry(this);
 		
-		return "commentsubmit.xhtml";
+		return "comments.xhtml";
 	}
 
 	
@@ -27,7 +27,7 @@ public class Link extends VoteEntry {
 		
 		String regex = "^(https?)://([\\w]*\\.)?[\\w]*\\.[\\w]*";
 		
-		if (url.matches(regex) && !title.equals("")){		
+		if (url.matches(regex)){		
 			setLevel(0);
 			linklist.addEntry(this);
 			return "index.xhtml";

@@ -45,11 +45,6 @@
 		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>navigationBean</managed-bean-name>
-		<managed-bean-class>rClone.hsr.ch.NavigationBean</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
-	<managed-bean>
 		<managed-bean-name>commentCreation</managed-bean-name>
 		<managed-bean-class>rClone.hsr.ch.CommentCreation</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
@@ -73,30 +68,6 @@
 		<navigation-case>
 			<from-outcome>loggedIn</from-outcome>
 			<to-view-id>/index.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<display-name>index.xhtml</display-name>
-		<from-view-id>/index.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>showComments</from-outcome>
-			<to-view-id>/commentsubmit.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<display-name>linksubmit.xhtml</display-name>
-		<from-view-id>/linksubmit.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>showComments</from-outcome>
-			<to-view-id>/commentsubmit.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<display-name>register.xhtml</display-name>
-		<from-view-id>/register.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>showComments</from-outcome>
-			<to-view-id>/commentsubmit.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
