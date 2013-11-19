@@ -7,19 +7,17 @@ public class Comment extends VoteEntry {
 	private String text;
 	private boolean selected;
 	
-	public void select() {
+	public String select() {
 		FacesContext context = FacesContext.getCurrentInstance();
 		CommentCreation commentSelection = (CommentCreation) context.getApplication().
 				evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
-		
-		if (commentSelection.getIsCommentSelected())
-			commentSelection.getSelectedComment().setSelected(false);
+		commentSelection.selectVoteEntry(this);
 		this.setSelected(true);
 		
-		commentSelection.setSelectedComment(this);
+		return "commentsubmit.xhtml";
 	}
 	
-	public void createChild() {
+	public String createChild() {
 		FacesContext context = FacesContext.getCurrentInstance();
 		CommentCreation commentCreation = (CommentCreation) context.getApplication().
 			evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
@@ -27,6 +25,8 @@ public class Comment extends VoteEntry {
 		Comment newComment = new Comment();
 		newComment.setText(commentCreation.getCommentToCreate());
 		addChildEntry(newComment);
+		
+		return "commentsubmit.xhtml";
 	}
 	
 	public int getMargin() {

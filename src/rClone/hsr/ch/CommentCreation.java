@@ -2,19 +2,25 @@ package rClone.hsr.ch;
 
 public class CommentCreation {
 	
-	private Comment selectedComment = null;
+	private VoteEntry selectedEntry = null;
 	private String commentToCreate;
 
-	public Comment getSelectedComment() {
-		return selectedComment;
-	}
-
-	public void setSelectedComment(Comment selectedComment) {
-		this.selectedComment = selectedComment;
+	public void selectVoteEntry(VoteEntry entry) {
+		if (getIsCommentSelected())
+			((Comment)getSelectedEntry()).setSelected(false);
+		setSelectedEntry(entry);
 	}
 	
 	public boolean getIsCommentSelected() {
-		return selectedComment != null;
+		return selectedEntry != null && selectedEntry.getClass() == Comment.class;
+	}
+
+	public VoteEntry getSelectedEntry() {
+		return selectedEntry;
+	}
+
+	public void setSelectedEntry(VoteEntry selectedEntry) {
+		this.selectedEntry = selectedEntry;
 	}
 
 	public String getCommentToCreate() {
@@ -24,11 +30,4 @@ public class CommentCreation {
 	public void setCommentToCreate(String commentToCreate) {
 		this.commentToCreate = commentToCreate;
 	}
-	
-	public void resetSelection() {
-		if (getIsCommentSelected())
-			getSelectedComment().setSelected(false);
-		selectedComment = null;
-	}
-
 }

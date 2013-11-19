@@ -21,11 +21,6 @@
 
 				<rc:linkdetails link="#{linklist.selectedLink}" render=":comments_panelGroup"></rc:linkdetails>
 				
-				
-				<h:commandButton id="resetSelection" value="Reset selection" action="${commentCreation.resetSelection}" immediate="true">
-					<f:ajax execute="@form" render=":comments_panelGroup" />
-				</h:commandButton>
-				
 				<h:panelGroup rendered="#{not commentCreation.isCommentSelected}">
 					<rc:commentsubmit voteentry="#{linklist.selectedLink}" render=":comments_panelGroup"/>
 				</h:panelGroup>
