@@ -1,6 +1,5 @@
 package rClone.hsr.ch;
 
-import java.text.SimpleDateFormat;
 import java.util.Comparator;
 import java.util.Date;
 
@@ -59,10 +58,8 @@ public class VoteEntry {
 	public void setVotes(int votes) {
 		this.votes = votes;
 	}
-	public String getCreationDate() {
-		SimpleDateFormat dt1 = new SimpleDateFormat("dd.MM yyyy");
-		
-		return dt1.format(creationDate);
+	public Date getCreationDate() {
+		return creationDate;
 	}
 	public void setCreationDate(Date crationDate) {
 		this.creationDate = crationDate;
@@ -86,4 +83,13 @@ public class VoteEntry {
 		this.parent = parent;
 	}
 	
+	public int getHoursAgo() {
+		Date now = new Date();
+		long diff = now.getTime() - creationDate.getTime();
+		diff = (int) diff / (60 * 60 * 1000);
+		if (diff < 1)
+			return 1;
+		else return (int) diff;
+	}
+
 }

@@ -15,7 +15,7 @@
 					<h:outputText value="#{link.title}"></h:outputText>
 				</h:outputLink>
 				<h:outputText value="#{link.votes}"></h:outputText>
-				<h:outputText id="info" value="#{msg['link.created']}: #{link.creationDate}" />
+				<h:outputText id="info" value="#{msg['createdp1']} #{link.hoursAgo} #{msg['createdp2']} ???" />
 				<h:commandButton class="voteDown" id="votedown" value="" action="#{link.voteDown}">
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
