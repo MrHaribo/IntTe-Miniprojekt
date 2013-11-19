@@ -25,7 +25,7 @@
 					<rc:commentsubmit voteentry="#{linklist.selectedLink}" render=":comments_panelGroup"/>
 				</h:panelGroup>
 				
-				<p:forEach var="comment" items="#{linklist.selectedLink.children.preorderList}">
+				<p:forEach var="comment" items="#{linklist.selectedLink.preorderList}">
 	
 					<rc:commentdetails link="#{comment}" render=":comments_panelGroup"></rc:commentdetails>
 					

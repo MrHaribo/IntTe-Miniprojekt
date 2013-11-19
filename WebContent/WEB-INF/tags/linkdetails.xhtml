@@ -20,7 +20,7 @@
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
 
-				<h:commandLink action="#{link.select}" value="#{msg['link.comments']}: #{link.children.size}">
+				<h:commandLink action="#{link.select}" value="#{msg['link.comments']}: #{link.numEntries}">
 				</h:commandLink>
 			</h:panelGrid>
 		</h:form>

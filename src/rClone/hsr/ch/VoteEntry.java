@@ -1,9 +1,12 @@
 package rClone.hsr.ch;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 
-public class VoteEntry {
+public class VoteEntry extends VoteList<VoteEntry> {
 	
 	public static class LinkVoteComparator implements Comparator<VoteEntry> {  
 		@Override
@@ -21,11 +24,11 @@ public class VoteEntry {
 	
 	private int id;
 	private int votes=0;
-	Date creationDate;
+	private Date creationDate;
 	private int level;
 	
 	private VoteEntry parent;
-	private VoteList<VoteEntry> children = new VoteList<VoteEntry>();
+	//private VoteList<VoteEntry> children = new VoteList<VoteEntry>();
 	
 	public String voteUp() {
 		//System.out.println("link voted up");
@@ -43,9 +46,23 @@ public class VoteEntry {
 	public void addChildEntry(VoteEntry child) {
 		child.setParent(this);
 		child.setLevel(getLevel()+1);
-		children.addEntry(child);
+		addEntry(child);
 	}
 	
+	public List<VoteEntry> getPreorderList() throws IOException {
+		ArrayList<VoteEntry> tmp = new ArrayList<VoteEntry>();
+		traverseTree(tmp, this);
+		return tmp;
+	}
+	
+	public int getHoursAgo() {
+		Date now = new Date();
+		long diff = now.getTime() - creationDate.getTime();
+		diff = (int) diff / (60 * 60 * 1000);
+		if (diff < 1)
+			return 1;
+		else return (int) diff;
+	}
 	public int getId() {
 		return id;
 	}
@@ -70,26 +87,10 @@ public class VoteEntry {
 	public void setLevel(int level) {
 		this.level = level;
 	}
-	public VoteList<VoteEntry> getChildren() {
-		return children;
-	}
-	public void setChildren(VoteList<VoteEntry> children) {
-		this.children = children;
-	}
 	public VoteEntry getParent() {
 		return parent;
 	}
 	public void setParent(VoteEntry parent) {
 		this.parent = parent;
 	}
-	
-	public int getHoursAgo() {
-		Date now = new Date();
-		long diff = now.getTime() - creationDate.getTime();
-		diff = (int) diff / (60 * 60 * 1000);
-		if (diff < 1)
-			return 1;
-		else return (int) diff;
-	}
-
 }

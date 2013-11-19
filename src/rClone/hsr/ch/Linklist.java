@@ -54,11 +54,11 @@ public class Linklist extends VoteList<Link> {
 		c5.setVotes(22);
 		c5.setText("Wieso nur?");
 		
-		l1.getChildren().addEntry(c1);
-		l1.getChildren().addEntry(c2);
-		c2.getChildren().addEntry(c3);
-		l2.getChildren().addEntry(c4);
-		c4.getChildren().addEntry(c5);
+		l1.addEntry(c1);
+		l1.addEntry(c2);
+		c2.addEntry(c3);
+		l2.addEntry(c4);
+		c4.addEntry(c5);
 
 		c1.setLevel(1);
 		c2.setLevel(1);
