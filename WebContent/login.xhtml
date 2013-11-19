@@ -4,7 +4,8 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 	<h:panelGroup rendered="#{!user.loggedIn}">
 		<h:panelGrid border="0" columns="5">
@@ -12,8 +13,8 @@
 				<h:outputText value="Reddit Clone"></h:outputText>
 			</h:outputLink>
 			<h:form>
-				<h:inputText id="username" value="#{user.username}" />
-				<h:inputSecret id="password" value="#{user.password}" />
+				<p:inputText value="#{user.username}" required="true" />
+				<p:password value="#{user.password}" required="true" />
 				<h:commandButton value="#{msg['login']}" action="#{user.checkLogin}" />
 			</h:form>
 			<h:form>
