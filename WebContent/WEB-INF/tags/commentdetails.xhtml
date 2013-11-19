@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 	<ui:composition>
 		<h:form>
@@ -22,9 +23,11 @@
 				<h:commandButton class="voteDown" id="votedown" value="" action="#{comment.voteDown}">
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
-
-				<h:commandLink action="#{comment.select}" value="#{msg['reply']}">
-				</h:commandLink>
+				
+				<p:commandLink update="#{render}" actionListener="#{comment.select}" style="margin-right:20px;">  
+			        <h:outputText value="#{msg['reply']}" />  
+			    </p:commandLink>
+				
 			</h:panelGrid>
 		</h:form>
 	</ui:composition>
