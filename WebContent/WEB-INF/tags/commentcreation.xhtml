@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
     
       <ui:composition>
       		<h:panelGroup rendered="#{user.loggedIn}">
@@ -13,9 +14,9 @@
 						
 						<h:inputTextarea value="#{commentCreation.commentToCreate}"></h:inputTextarea>
 					
-						<h:commandButton value="#{msg['comment.submit']}" action="${voteentry.createChild}">
-							<f:ajax execute="@form" render="#{render}" />
-						</h:commandButton>
+						<p:commandButton value="#{msg['comment.submit']}" update="#{render}" id="ajax"  
+             				actionListener="#{voteentry.createChild}" styleClass="ui-priority-primary"/>
+
 					</h:panelGrid>
 				</h:form>
 			</h:panelGroup>

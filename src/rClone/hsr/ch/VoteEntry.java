@@ -6,8 +6,6 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
-import javax.faces.context.FacesContext;
-
 public class VoteEntry extends VoteList<VoteEntry> {
 	
 	public static class LinkVoteComparator implements Comparator<VoteEntry> {  
@@ -48,13 +46,7 @@ public class VoteEntry extends VoteList<VoteEntry> {
 	
 	public void addChildEntry(VoteEntry child) {
 		child.setParent(this);
-		child.setLevel(getLevel()+1);
-		
-		FacesContext context = FacesContext.getCurrentInstance();
-		String username = (String) context.getApplication().
-				evaluateExpressionGet(context, "#{user.username}", String.class);
-		child.setCreator(username);
-		
+		child.setLevel(getLevel()+1);		
 		addEntry(child);
 	}
 	

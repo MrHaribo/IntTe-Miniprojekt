@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import javax.faces.context.FacesContext;
+
 public class VoteList<T extends VoteEntry> {
 	
 	protected ArrayList<T> entries = new ArrayList<T>();
@@ -15,22 +17,29 @@ public class VoteList<T extends VoteEntry> {
 		searchEntry.setId(id);
 		int searchIdx = Collections.binarySearch(entries,  searchEntry, new VoteEntry.LinkIdComparator());
 		return entries.get(searchIdx);
-		
-		/*
-		for (T e : entries)
-			if (e.getId() == id)
-				return e;
-		return null;
-		*/
 	}
 	
 	public T fromIdx(int idx) {
 		return entries.get(idx);
 	}
 	
+	public void addEntry(T entry, String username, Date date) {
+		entry.setId(entries.size());
+		entry.setCreationDate(date);
+		entry.setCreator(username);
+		
+		this.entries.add(entry);
+	}
+	
 	public void addEntry(T entry) {
 		entry.setId(entries.size());
 		entry.setCreationDate(new Date());
+		
+		FacesContext context = FacesContext.getCurrentInstance();
+		String username = (String) context.getApplication().
+				evaluateExpressionGet(context, "#{user.username}", String.class);
+		entry.setCreator(username);
+		
 		this.entries.add(entry);
 	}
 	
