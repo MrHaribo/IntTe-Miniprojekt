@@ -18,17 +18,17 @@
 			<h:panelGrid border="0" columns="3">
 				<h:graphicImage id="regSymbol" library="images" name="reddit.png"></h:graphicImage>
 				<h:panelGrid border="0" columns="1">
-					<h2>Submit a new Link</h2>
-					<p>Enter a title and the URL to submit.</p>
+					<h:outputText id="linksubmitTitle" value="#{linksubmit.title}"/>
+					<h:outputText id="linksubmitSub" value="#{linksubmit.sub}"/>
 				</h:panelGrid>
 				<h:form>
 					<h:panelGrid border="0" columns="2">
-						<h:outputText value="Title:" />
-						<h:inputText id="title" value="#{link.title}"></h:inputText>
+						<h:outputText value="#{msg['linktitle']}:" />
+						<h:inputText value="#{link.title}" />
 						<h:outputText value="URL:" />
-						<h:inputText id="url" value="#{link.url}"></h:inputText>
-						<h:commandButton value="Submit"
-							action="#{link.createLink}"></h:commandButton>
+						<h:inputText value="#{link.url}" />
+						<h:commandButton value="#{msg['submit']}"
+							action="#{link.createLink}" />
 					</h:panelGrid>
 				</h:form>
 			</h:panelGrid>

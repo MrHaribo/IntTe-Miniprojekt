@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faces-config
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
-    version="2.2">
-    
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+
 	<component>
 		<component-type>rClone.hsr.ch.Useless</component-type>
 		<component-class>rClone.hsr.ch.UselessComponent</component-class>
 	</component>
-    
+
 	<managed-bean>
 		<managed-bean-name>link</managed-bean-name>
 		<managed-bean-class>rClone.hsr.ch.Link</managed-bean-class>
@@ -55,6 +54,11 @@
 		<managed-bean-class>rClone.hsr.ch.CommentCreation</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>languageBean</managed-bean-name>
+		<managed-bean-class>rClone.hsr.ch.LanguageBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	<navigation-rule>
 		<display-name>linksubmit.xhtml</display-name>
 		<from-view-id>/linksubmit.xhtml</from-view-id>
@@ -95,5 +99,16 @@
 			<to-view-id>/commentsubmit.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+
+	<application>
+		<locale-config>
+			<default-locale>en</default-locale>
+			<supported-locale>de</supported-locale>
+		</locale-config>
+		<resource-bundle>
+			<base-name>resources.messages.messages</base-name>
+			<var>msg</var>
+		</resource-bundle>
+	</application>
 
 </faces-config>

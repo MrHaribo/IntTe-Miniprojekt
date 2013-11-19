@@ -16,17 +16,19 @@
 			<h:panelGrid border="0" columns="3">
 				<h:graphicImage id="regSymbol" library="images" name="reddit.png"></h:graphicImage>
 				<h:panelGrid border="0" columns="1">
-					<h2>Create a new User-Account</h2>
-					<p>You only need an username and a password.</p>
+					<h:outputLabel id="regtitle" value="#{msg['register.title']}" />
+					<h:outputLabel id="regsub" value="#{msg['register.sub']}" />
 				</h:panelGrid>
 				<h:form>
-					<h:panelGrid border="0" columns="1">
+					<h:panelGrid border="0" columns="2">
+						<h:outputLabel value="#{msg['username']}:" />
 						<h:inputText id="regUsername" value="#{user.username}" />
-						<h:inputText id="regPassword" value="#{user.password}" />
-						<h:inputText id="regRepPassword" value="#{user.passRepeat}" />
-						<h:commandButton id="regSubmit" value="Register" action="#{user.register}">
-						</h:commandButton>
-					</h:panelGrid>
+						<h:outputLabel value="#{msg['password']}:" />
+						<h:inputSecret id="regPassword" value="#{user.password}" />
+						<h:outputLabel value="#{msg['passRepeat']}:" />
+						<h:inputSecret id="regRepPassword" value="#{user.passRepeat}" />
+					</h:panelGrid><br />
+					<h:commandButton  value="#{msg['register']}" action="#{user.register}" />
 				</h:form>
 			</h:panelGrid>
 		</ui:define>

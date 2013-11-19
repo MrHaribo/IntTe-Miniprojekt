@@ -3,22 +3,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:h="http://java.sun.com/jsf/html">
-<h:head>
-	<h:outputStylesheet library="css" name="Style.css" />
-	<title>Reddit Clone</title>
-</h:head>
-<body>
-	<h:panelGroup layout="block" id="header">
-	<ui:insert name = "content_header">Header Content here</ui:insert>
-	</h:panelGroup>
-		
-	<h:panelGroup layout="block" id="top">
-	<ui:insert name = "content_top"> Top Content here</ui:insert>
-	</h:panelGroup>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+		<h:outputStylesheet library="css" name="Style.css" />
+		<title>Reddit Clone</title>
+	</h:head>
+	<h:body>
+		<h:panelGroup layout="block" id="header">
+			<ui:insert name="content_header">Header Content here</ui:insert>
+		</h:panelGroup>
 
-	<h:panelGroup layout="block" id="content">
-		<ui:insert name="content_main">Website Content here</ui:insert>
-	</h:panelGroup>
-</body>
+		<h:panelGroup layout="block" id="top">
+			<ui:insert name="content_top"> Top Content here</ui:insert>
+		</h:panelGroup>
+
+		<h:panelGroup layout="block" id="content">
+			<ui:insert name="content_main">Website Content here</ui:insert>
+		</h:panelGroup>
+	</h:body>
 </html>
