@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:composition>
+		<h:form>
+			<h:panelGrid class="linkGrid" border="1" columns="2" style="margin-left:#{comment.margin}px;">
+			
+				<h:commandButton class="voteUp" id="voteup" value="" action="#{comment.voteUp}">
+					<f:ajax execute="@form" render="#{render}" />
+				</h:commandButton>
+
+				
+				<h:outputText id="info" value="Created by ??? on: #{comment.creationDate}" />
+
+				<h:outputText value="#{comment.votes}"></h:outputText>
+				
+				<h:outputText value="#{comment.text}"></h:outputText>
+				
+				<h:commandButton class="voteDown" id="votedown" value="" action="#{comment.voteDown}">
+					<f:ajax execute="@form" render="#{render}" />
+				</h:commandButton>
+
+				<h:commandLink action="#{comment.select}" value="Reply">
+				</h:commandLink>
+			</h:panelGrid>
+		</h:form>
+	</ui:composition>
+
+</html>

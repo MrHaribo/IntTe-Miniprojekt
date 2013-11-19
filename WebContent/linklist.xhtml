@@ -4,7 +4,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://java.sun.com/jsp/jstl/core"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rc="http://hsr.ch/rClone">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>Link List</title>
@@ -15,27 +16,7 @@
 
 			<p:forEach var="link" items="#{linklist.links}">
 
-				<h:form>
-					<h:panelGrid class="linkGrid" border="1" columns="2">
-						<h:commandButton class="voteUp" id="voteup" value="" action="#{link.voteUp}">
-							<f:ajax execute="@form" render=":linklist_panelGroup" />
-						</h:commandButton>
-						<h:outputLink value="#{link.url}">
-							<h:outputText value="#{link.title}"></h:outputText>
-						</h:outputLink>
-						<h:outputText value="#{link.votes}"></h:outputText>
-						<h:outputText id="info" value="Created: #{link.creationDate}" />
-						<h:commandButton class="voteDown" id="votedown" value=""
-							action="#{link.voteDown}">
-							<f:ajax execute="@form" render=":linklist_panelGroup" />
-						</h:commandButton>
-
-						<h:commandLink action="#{link.select}" value="Comments: #{link.children.size}">
-						</h:commandLink>
-						
-
-					</h:panelGrid>
-				</h:form>
+				<rc:linkdetails link="#{link}" render=":linklist_panelGroup"></rc:linkdetails>
 				<br />
 
 			</p:forEach>

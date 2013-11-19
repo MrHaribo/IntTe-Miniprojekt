@@ -19,11 +19,8 @@
 		<ui:define name="content_main">
 			<h:panelGroup layout="block" id="comments_panelGroup">
 
-				<h:outputText id="test" value="#{linklist.selectedLink.id}"></h:outputText>
-				<br />
-				<h:outputText id="test2"
-					value="Test Entry: ${linklist.selectedLink.title}"></h:outputText>
-				<br />
+				<rc:linkdetails link="#{linklist.selectedLink}" render=":comments_panelGroup"></rc:linkdetails>
+				
 				
 				<h:commandButton id="resetSelection" value="Reset selection" action="${commentCreation.resetSelection}" immediate="true">
 					<f:ajax execute="@form" render=":comments_panelGroup" />
@@ -35,26 +32,12 @@
 				
 				<p:forEach var="comment" items="#{linklist.selectedLink.children.preorderList}">
 	
-					<h:form>
-						<h:panelGrid border="1" columns="2" style="margin-left:#{comment.margin}px;">
-			
-							<h:outputText id="title" value="#{comment.text}"></h:outputText>
-							<h:outputText value="#{comment.votes}"></h:outputText>
-							<h:outputText id="info" value="Created: #{comment.creationDate}" />
-							<h:outputText id="numComments" value="Num Comments: #{comment.children.size}" />
-							
-							<h:commandButton id="select" value="Select" 
-								action="${comment.select}" immediate="true">
-								<f:ajax execute="@form" render=":comments_panelGroup" />
-							</h:commandButton>
-			
-						</h:panelGrid>
+					<rc:commentdetails link="#{comment}" render=":comments_panelGroup"></rc:commentdetails>
+					
+					<h:panelGroup rendered="#{comment.selected}">
+						<rc:commentsubmit voteentry="#{comment}" render=":comments_panelGroup"/>
+					</h:panelGroup>
 						
-						<h:panelGroup rendered="#{comment.selected}">
-							<rc:commentsubmit voteentry="#{comment}" render=":comments_panelGroup"/>
-						</h:panelGroup>
-						
-					</h:form>
 					<br />
 			
 				</p:forEach>

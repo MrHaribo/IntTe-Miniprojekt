@@ -13,10 +13,17 @@
 	    <renderer-type>rClone.hsr.ch.Useless</renderer-type>
 	  </component>
   </tag>
-  
   <tag>
 	<tag-name>commentsubmit</tag-name>
 	<source>tags/commentcreation.xhtml</source>
+  </tag>
+  <tag>
+	<tag-name>linkdetails</tag-name>
+	<source>tags/linkdetails.xhtml</source>
+  </tag>
+  <tag>
+	<tag-name>commentdetails</tag-name>
+	<source>tags/commentdetails.xhtml</source>
   </tag>
   
 </facelet-taglib>
