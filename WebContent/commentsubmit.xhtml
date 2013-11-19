@@ -17,9 +17,11 @@
 		</ui:define>
 		<ui:define name="content_top" />
 		<ui:define name="content_main">
+			<br />
 			<h:panelGroup layout="block" id="comments_panelGroup">
 
 				<rc:linkdetails link="#{linklist.selectedLink}" render=":comments_panelGroup"></rc:linkdetails>
+				<br />
 				
 				<h:panelGroup rendered="#{not commentCreation.isCommentSelected}">
 					<rc:commentsubmit voteentry="#{linklist.selectedLink}" render=":comments_panelGroup"/>
