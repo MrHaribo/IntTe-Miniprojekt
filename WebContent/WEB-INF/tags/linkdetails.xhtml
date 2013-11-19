@@ -15,12 +15,12 @@
 					<h:outputText value="#{link.title}"></h:outputText>
 				</h:outputLink>
 				<h:outputText value="#{link.votes}"></h:outputText>
-				<h:outputText id="info" value="Created: #{link.creationDate}" />
+				<h:outputText id="info" value="#{msg['link.created']}: #{link.creationDate}" />
 				<h:commandButton class="voteDown" id="votedown" value="" action="#{link.voteDown}">
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
 
-				<h:commandLink action="#{link.select}" value="Comments: #{link.children.size}">
+				<h:commandLink action="#{link.select}" value="#{msg['link.comments']}: #{link.children.size}">
 				</h:commandLink>
 			</h:panelGrid>
 		</h:form>

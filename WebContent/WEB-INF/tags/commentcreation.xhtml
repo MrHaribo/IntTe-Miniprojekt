@@ -12,7 +12,7 @@
 				
 				<h:inputTextarea value="#{commentCreation.commentToCreate}"></h:inputTextarea>
 			
-				<h:commandButton value="Submit comment" action="${voteentry.createChild}">
+				<h:commandButton value="#{msg['comment.submit']}" action="${voteentry.createChild}">
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
 			</h:panelGrid>

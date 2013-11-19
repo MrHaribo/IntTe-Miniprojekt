@@ -14,7 +14,7 @@
 				</h:commandButton>
 
 				
-				<h:outputText id="info" value="Created by ??? on: #{comment.creationDate}" />
+				<h:outputText id="info" value="#{msg['comment.createdpart1']} ??? #{msg['comment.createdpart2']}: #{comment.creationDate}" />
 
 				<h:outputText value="#{comment.votes}"></h:outputText>
 				
@@ -24,7 +24,7 @@
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
 
-				<h:commandLink action="#{comment.select}" value="Reply">
+				<h:commandLink action="#{comment.select}" value="#{msg['reply']}">
 				</h:commandLink>
 			</h:panelGrid>
 		</h:form>
