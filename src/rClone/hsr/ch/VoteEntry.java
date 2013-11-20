@@ -36,8 +36,7 @@ public class VoteEntry extends VoteList<VoteEntry> {
 	}
 	
 	public String voteDown() {
-		if (this.votes > 0)
-			this.votes--;
+		this.votes--;
 		return "link voted down";
 	}
 	

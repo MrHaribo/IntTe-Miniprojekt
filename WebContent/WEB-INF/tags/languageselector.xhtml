@@ -10,7 +10,7 @@
       	<h:form>
 			<h:panelGrid columns="2">
 		 
-				Language : 
+				<h:outputLabel value="#{msg['language']}:"></h:outputLabel>
 				<h:selectOneMenu value="#{language.localeCode}" onchange="submit()"
 					valueChangeListener="#{language.countryLocaleCodeChanged}">
 		   			<f:selectItems value="#{language.countriesInMap}" /> 

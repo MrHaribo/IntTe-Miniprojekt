@@ -5,7 +5,8 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:rc="http://hsr.ch/rClone">
 
 	<h:panelGroup rendered="#{!user.loggedIn}">
 		<h:panelGrid class="pagetitleGrid" border="0" columns="1">
@@ -13,7 +14,7 @@
 				<h:outputText value="Reddit Clone"></h:outputText>
 			</h:outputLink>
 		</h:panelGrid>
-		<h:panelGrid class="loginGrid" border="0" columns="2">
+		<h:panelGrid class="loginGrid" border="0" columns="3">
 			<h:form>
 				<p:inputText value="#{user.username}" />
 				<p:password value="#{user.password}" />
@@ -22,6 +23,9 @@
 			<h:form>
 				<p:commandButton value="#{msg['register']}" action="register.xhtml"
 					immediate="true" ajax="false"/>
+			</h:form>
+			<h:form class="languageSelector">
+				<rc:languageselector></rc:languageselector>
 			</h:form>
 		</h:panelGrid>
 	</h:panelGroup>
@@ -36,13 +40,15 @@
 					action="linksubmit.xhtml" immediate="true" ajax="false" />
 			</h:form>
 		</h:panelGrid>
-		<h:panelGrid class="loginGrid" border="0" columns="2">
+		<h:panelGrid class="loginGrid" border="0" columns="3">
 			<h:outputText id="userText" value="Hi #{user.username}" />
 			<h:form>
 				<p:commandButton value="#{msg['logout']}" action="#{user.logOut}"
 					immediate="true" ajax="false" />
 			</h:form>
-
+			<h:form class="languageSelector">
+				<rc:languageselector></rc:languageselector>
+			</h:form>
 		</h:panelGrid>
 
 	</h:panelGroup>

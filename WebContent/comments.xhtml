@@ -34,18 +34,9 @@
 					<h:panelGroup rendered="#{comment.selected}">
 						<rc:commentsubmit voteentry="#{comment}" render=":comments_panelGroup"/>
 					</h:panelGroup>
-						
 					<br />
 			
 				</p:forEach>
-				
-				<h:form>
-					<rc:useless linkid="#{link.id}" hellomsg=	"Das isch de useless component wo i gmacht han!
-																i will aber no vom Dozent wüsse wa min Fehler isch, 
-																deswege isch es no drin">
-						<h:outputText id="test2" value="More useless Child"></h:outputText>
-					</rc:useless>
-				</h:form>
 				
 			</h:panelGroup>
 		</ui:define>

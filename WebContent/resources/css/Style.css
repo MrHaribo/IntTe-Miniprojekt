@@ -23,6 +23,12 @@ body {
 	float: right;
 }
 
+.languageSelector {
+	margin: 2px;
+	height: 38px;
+	background-color: #303030;
+}
+
 #userText {
 	font-size: 20px;
 	font-weight: bold;
