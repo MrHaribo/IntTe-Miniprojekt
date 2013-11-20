@@ -25,5 +25,9 @@
 	<tag-name>commentdetails</tag-name>
 	<source>tags/commentdetails.xhtml</source>
   </tag>
+  <tag>
+	<tag-name>languageselector</tag-name>
+	<source>tags/languageselector.xhtml</source>
+  </tag>
   
 </facelet-taglib>

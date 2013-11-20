@@ -29,16 +29,13 @@ public class VoteEntry extends VoteList<VoteEntry> {
 	private int level;
 	
 	private VoteEntry parent;
-	//private VoteList<VoteEntry> children = new VoteList<VoteEntry>();
 	
 	public String voteUp() {
-		//System.out.println("link voted up");
 		this.votes++;
 		return "link voted up";
 	}
 	
 	public String voteDown() {
-		//System.out.println("link voted down");
 		if (this.votes > 0)
 			this.votes--;
 		return "link voted down";

@@ -50,7 +50,7 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>languageBean</managed-bean-name>
+		<managed-bean-name>language</managed-bean-name>
 		<managed-bean-class>rClone.hsr.ch.LanguageBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
@@ -63,23 +63,24 @@
 		</navigation-case>
 	</navigation-rule>
 	<navigation-rule>
-		<display-name>register.xhtml</display-name>
-		<from-view-id>/register.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>loggedIn</from-outcome>
-			<to-view-id>/index.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
+	  	<display-name>register.xhtml</display-name>
+  		<from-view-id>/register.xhtml</from-view-id>
+  		<navigation-case>
+   			<from-outcome>loggedIn</from-outcome>
+   			<to-view-id>/index.xhtml</to-view-id>
+  		</navigation-case>
+ 	</navigation-rule>
 
 	<application>
-		<locale-config>
-			<default-locale>en</default-locale>
-			<supported-locale>de</supported-locale>
-		</locale-config>
-		<resource-bundle>
-			<base-name>resources.messages.messages</base-name>
-			<var>msg</var>
-		</resource-bundle>
-	</application>
+     	   <locale-config>
+     	   		<default-locale>de</default-locale>
+     	        <supported-locale>en</supported-locale>
+    			<supported-locale>de</supported-locale>
+     	   </locale-config>
+	   <resource-bundle>
+		<base-name>rClone.hsr.ch.Locale.messages</base-name>
+		<var>msg</var>
+	   </resource-bundle>
+     </application>
 
 </faces-config>
