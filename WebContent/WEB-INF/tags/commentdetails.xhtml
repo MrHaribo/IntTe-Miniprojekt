@@ -24,7 +24,7 @@
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
 				
-				<p:commandLink class="commentReply" update="#{render}" actionListener="#{comment.select}" style="margin-right:20px;">  
+				<p:commandLink update="#{render}" actionListener="#{comment.select}" style="margin-right:20px;">  
 			        <h:outputText value="#{msg['reply']}" />  
 			    </p:commandLink>
 				
