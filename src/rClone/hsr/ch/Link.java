@@ -44,6 +44,7 @@ public class Link extends VoteEntry {
 		newComment.setText(commentCreation.getCommentToCreate());
 		newComment.setLevel(1);
 		addChildEntry(newComment);
+		commentCreation.setCommentToCreate("");;
 	}
 	
 	public Linklist getLinklist() {
