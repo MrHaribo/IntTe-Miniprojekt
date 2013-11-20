@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 	<ui:composition>
 		<h:form class="linkForm">
@@ -20,8 +21,8 @@
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
 
-				<h:commandLink class="linkComments" action="#{link.select}" value="#{msg['link.comments']}: #{link.numEntries}">
-				</h:commandLink>
+				<p:commandLink styleClass="linkComments"  update="#{render}" action="#{link.select}" value="#{msg['link.comments']}: #{link.numEntries}">
+				</p:commandLink>
 			</h:panelGrid>
 		</h:form>
 	</ui:composition>
