@@ -1,6 +1,7 @@
 
 body {
 	font-family: "Arial", Arial, Sans-serif;
+	margin: 0px;
 }
 
 #header {
@@ -11,20 +12,25 @@ body {
 	padding: 5px;
 }
 
+.pagetitleGrid {
+	width: 500px;
+	float: left;
+}
+
 .loginGrid {
-	width: 100%;
+	text-align: right;
+	align: right;
+	float: right;
 }
 
-#pagetitleLogout {
-	width: 100%;
-	font-size: xx-large;
-	text-decoration: none;
-	color: white;
+#userText {
+	font-size: 20px;
+	font-weight: bold;
+	color: #00FF00;
 }
 
-#pagetitleLogin {
-	width: 70%;
-	font-size: xx-large;
+.pageTitle {
+	font-size: 42px;
 	text-decoration: none;
 	color: white;
 }
@@ -40,11 +46,6 @@ body {
 	background-repeat: repeat-x;
 	color: black;
 	padding-top: 20px;
-}
-
-.rightAlign {
-	text-align: right;
-	align: right;
 }
 
 .linkForm {
@@ -70,6 +71,36 @@ body {
 	font-weight: bold;
 	font-size: 20px;
 	color: #00FF00;
+}
+
+.linksubmitGrid {
+	padding: 5px;
+}
+
+#linksubmitTitle {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#linksubmitSub {
+	font-weight: bold;
+}
+
+#regtitle {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.regGrid {
+	padding: 5px;
+}
+
+#regsub {
+	font-weight: bold;
+}
+
+.commentcreationGrid {
+	padding: 5px;
 }
 
 .linkComments {
@@ -98,7 +129,11 @@ body {
 	font-weight: bold;
 	font-size: 20px;
 	color: white;
-}s
+}
+
+.commentReply {
+	color: white;
+}
 
 #title {
 	font-weight: bold;
