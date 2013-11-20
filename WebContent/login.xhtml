@@ -15,7 +15,7 @@
 			<h:form class="rightAlign">
 				<p:inputText value="#{user.username}" />
 				<p:password value="#{user.password}" />
-				<p:commandButton value="#{msg['login']}" actionListener="#{user.checkLogin}" ajax="false"/>
+				<p:commandButton value="#{msg['login']}" action="#{user.checkLogin}" ajax="false"/>
 			</h:form>
 			<h:form class="rightAlign">
 				<p:commandButton value="#{msg['register']}" action="register.xhtml"
@@ -36,7 +36,7 @@
 			</h:form>
 			<h:outputText value="Hi #{user.username}" />
 			<h:form class="rightAlign">
-				<p:commandButton value="#{msg['logout']}" actionListener="#{user.logOut}"
+				<p:commandButton value="#{msg['logout']}" action="#{user.logOut}"
 					immediate="true" ajax="false" />
 			</h:form>
 

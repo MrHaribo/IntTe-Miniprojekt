@@ -19,8 +19,8 @@
 			<h:panelGrid border="0" columns="3">
 				<h:graphicImage id="regSymbol" library="images" name="reddit.png"></h:graphicImage>
 				<h:panelGrid border="0" columns="1">
-					<h:outputText id="linksubmitTitle" value="#{linksubmit.title}"/>
-					<h:outputText id="linksubmitSub" value="#{linksubmit.sub}"/>
+					<h:outputText id="linksubmitTitle" value="#{msg['linksubmit.title']}"/>
+					<h:outputText id="linksubmitSub" value="#{msg['linksubmit.sub']}"/>
 				</h:panelGrid>
 				<h:form>
 					<h:panelGrid border="0" columns="2">
@@ -28,10 +28,10 @@
 						<p:inputText value="#{link.title}" label="#{msg['linktitle']}" required="true"/>
 						<h:outputText value="URL:" />
 						<p:inputText value="#{link.url}" label="URL" required="true"/>
-						<p:messages id="messages" showDetail="true" autoUpdate="true"/>  <br />
 						<p:commandButton value="#{msg['submit']}"
 							action="#{link.createLink}" ajax="false"/>
 					</h:panelGrid>
+					<p:messages id="messages" showDetail="true" autoUpdate="true"/>  <br />
 				</h:form>
 			</h:panelGrid>
 		</ui:define>
