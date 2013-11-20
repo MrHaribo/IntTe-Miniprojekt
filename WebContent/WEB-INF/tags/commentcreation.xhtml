@@ -9,7 +9,7 @@
       <ui:composition>
       		<h:panelGroup rendered="#{user.loggedIn}">
 				<h:form>
-					<h:panelGrid border="0" columns="3">
+					<h:panelGrid class="commentcreationGrid" border="0" columns="3">
 						<h:graphicImage library="images" name="reddit.png"></h:graphicImage>
 						
 						<h:inputTextarea value="#{commentCreation.commentToCreate}"></h:inputTextarea>
