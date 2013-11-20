@@ -13,8 +13,7 @@ public class Comment extends VoteEntry {
 				evaluateExpressionGet(context, "#{commentCreation}", CommentCreation.class);
 		commentSelection.selectVoteEntry(this);
 		this.setSelected(true);
-		
-		return "commentsubmit.xhtml";
+		return "comments.xhtml";
 	}
 	
 	public String createChild() {
@@ -25,7 +24,8 @@ public class Comment extends VoteEntry {
 		Comment newComment = new Comment();
 		newComment.setText(commentCreation.getCommentToCreate());		
 		addChildEntry(newComment);
-		return "commentsubmit.xhtml";
+		commentCreation.setCommentToCreate("");
+		return "comments.xhtml";
 	}
 	
 	public int getMargin() {
