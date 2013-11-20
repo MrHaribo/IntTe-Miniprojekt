@@ -4,19 +4,26 @@ body {
 }
 
 #header {
+	height: 100px;
 	background-color: #424242;
 	font-weight: bold;
 	color: white;
 	padding: 5px;
 }
 
+.loginGrid {
+	width: 100%;
+}
+
 #pagetitleLogout {
+	width: 100%;
 	font-size: xx-large;
 	text-decoration: none;
 	color: white;
 }
 
 #pagetitleLogin {
+	width: 70%;
 	font-size: xx-large;
 	text-decoration: none;
 	color: white;
@@ -28,13 +35,20 @@ body {
 }
 
 #content {
+	min-height: 700px;
+	background-image: url('images/contentbg.png');
+	background-repeat: repeat-x;
 	color: black;
-	background-color: white;
+	padding-top: 20px;
 }
 
-h2 {
-	font-weight: bold;
-	color: green;
+.rightAlign {
+	text-align: right;
+	align: right;
+}
+
+.linkForm {
+	padding-left: 10px;
 }
 
 .linkGrid {
@@ -42,12 +56,52 @@ h2 {
 	width: 600px;
 	height: 170px;
 	border: none;
+	text-align: left;
 	color: white;
 	padding: 5px;
 }
 
 .linkGrid td {
 	border: none !important;
+}
+
+.linkTitle {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 20px;
+	color: #00FF00;
+}
+
+.linkComments {
+	color: white;
+}
+
+.commentForm {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.commentGrid {
+	background-image: url('images/commentbg.png');
+	width: 500px;
+	height: 170px;
+	border: none;
+	color: white;
+	padding: 5px;
+}
+
+.commentGrid td {
+	border: none !important;
+}
+
+.commentText {
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+}
+
+.commentReply {
+	color: white;
 }
 
 #title {

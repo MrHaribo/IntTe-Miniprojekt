@@ -8,16 +8,16 @@
 	xmlns:p="http://primefaces.org/ui">
 
 	<h:panelGroup rendered="#{!user.loggedIn}">
-		<h:panelGrid border="0" columns="5">
+		<h:panelGrid class="loginGrid" border="0" columns="5">
 			<h:outputLink id="pagetitleLogout" value="index.xhtml">
 				<h:outputText value="Reddit Clone"></h:outputText>
 			</h:outputLink>
-			<h:form>
+			<h:form class="rightAlign">
 				<p:inputText value="#{user.username}" />
 				<p:password value="#{user.password}" />
 				<p:commandButton value="#{msg['login']}" actionListener="#{user.checkLogin}" ajax="false"/>
 			</h:form>
-			<h:form>
+			<h:form class="rightAlign">
 				<p:commandButton value="#{msg['register']}" action="register.xhtml"
 					immediate="true" ajax="false"/>
 			</h:form>
@@ -34,16 +34,16 @@
 	</h:panelGroup>
 
 	<h:panelGroup rendered="#{user.loggedIn}">
-		<h:panelGrid border="0" columns="4">
+		<h:panelGrid class="loginGrid" border="0" columns="4">
 			<h:outputLink id="pagetitleLogin" value="index.xhtml">
 				<h:outputText value="Reddit Clone" />
 			</h:outputLink>
-			<h:form>
+			<h:form class="rightAlign">
 				<p:commandButton value="#{msg['linksubmit']}"
 					action="linksubmit.xhtml" immediate="true" ajax="false" />
 			</h:form>
 			<h:outputText value="Hi #{user.username}" />
-			<h:form>
+			<h:form class="rightAlign">
 				<p:commandButton value="#{msg['logout']}" actionListener="#{user.logOut}"
 					immediate="true" ajax="false" />
 			</h:form>

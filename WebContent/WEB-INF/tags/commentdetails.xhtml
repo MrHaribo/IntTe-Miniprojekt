@@ -7,15 +7,15 @@
 	xmlns:p="http://primefaces.org/ui">
 
 	<ui:composition>
-		<h:form>
-			<h:panelGrid class="linkGrid" border="1" columns="2" style="margin-left:#{comment.margin}px;">
+		<h:form class="commentForm">
+			<h:panelGrid class="commentGrid" border="1" columns="2" style="margin-left:#{comment.margin}px;">
 			
 				<h:commandButton class="voteUp" id="voteup" value="" action="#{comment.voteUp}">
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
 
 				
-				<h:outputText id="info" value="#{msg['createdp1']} #{comment.hoursAgo} #{msg['createdp2']} #{comment.creator}" />
+				<h:outputText class="commentText" value="#{msg['createdp1']} #{comment.hoursAgo} #{msg['createdp2']} #{comment.creator}" />
 
 				<h:outputText value="#{comment.votes}"></h:outputText>
 				<h:outputText value="#{comment.text}"></h:outputText>
@@ -24,7 +24,7 @@
 					<f:ajax execute="@form" render="#{render}" />
 				</h:commandButton>
 				
-				<p:commandLink update="#{render}" actionListener="#{comment.select}" style="margin-right:20px;">  
+				<p:commandLink class="commentReply" update="#{render}" actionListener="#{comment.select}" style="margin-right:20px;">  
 			        <h:outputText value="#{msg['reply']}" />  
 			    </p:commandLink>
 				
